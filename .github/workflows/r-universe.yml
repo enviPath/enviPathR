@@ -1,0 +1,15 @@
+name: Test R-universe
+on:
+  pull_request:
+    branches:
+      - devel
+jobs:
+  build:
+    name: R-universe testing
+    uses: r-universe-org/workflows/.github/workflows/build.yml@v3
+    with:
+      universe: bioc
+      organization: bioconductor
+    secrets:
+      EP_USERNAME: ${{ secrets.EP_USERNAME }}
+      EP_PASSWORD: ${{ secrets.EP_PASSWORD }}
