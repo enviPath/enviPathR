@@ -67,7 +67,7 @@ BiocManager::install("enviPathR")
 Beta version:
 
 ```{r install-devel, eval = FALSE}
-remotes::install_github("Minotau-R/enviPathR")
+remotes::install_github("enviPath/enviPathR")
 ```
 
 Then, we can import enviPathR and another couple of optional packages used in
@@ -80,7 +80,7 @@ library(knitr)
 ```
 
 All the following methods are further described in the enviPathR
-[function reference](https://minotau-r.github.io/enviPathR/reference/index.html){target="_blank"}.
+[function reference](https://envipath.github.io/enviPathR/reference/index.html){target="_blank"}.
 
 ### `epTypes`: explore enviPath database structure
 

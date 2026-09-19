@@ -1,9 +1,9 @@
 # enviPathR: the R client for the enviPath RESTful API <img src="man/figures/enviPathR-logo.png" align="right" width="120" />
 
-[![issues](https://img.shields.io/github/issues/Minotau-R/enviPathR)](https://github.com/Minotau-R/enviPathR/issues)
-[![pulls](https://img.shields.io/github/issues-pr/Minotau-R/enviPathR)](https://github.com/Minotau-R/enviPathR/pulls)
-[![R-CMD-check](https://github.com/Minotau-R/enviPathR/workflows/build/badge.svg)](https://github.com/Minotau-R/enviPathR/actions)
-[![CodeFactor](https://www.codefactor.io/repository/github/minotau-r/envipathr/badge)](https://www.codefactor.io/repository/github/minotau-r/envipathr)
+[![issues](https://img.shields.io/github/issues/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/issues)
+[![pulls](https://img.shields.io/github/issues-pr/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/pulls)
+[![R-CMD-check](https://github.com/enviPath/enviPathR/workflows/build/badge.svg)](https://github.com/enviPath/enviPathR/actions)
+[![CodeFactor](https://www.codefactor.io/repository/github/enviPath/envipathr/badge)](https://www.codefactor.io/repository/github/enviPath/envipathr)
 
 This package provides a client to the enviPath biotransformation database and
 pathway prediction system. It accesses enviPath resources through its [legacy
@@ -24,7 +24,7 @@ BiocManager::install("enviPathR")
 Beta version:
 
 ```
-remotes::install_github("Minotau-R/enviPathR")
+remotes::install_github("enviPath/enviPathR")
 ```
 
 ## References
