@@ -66,7 +66,7 @@ Benedetti</h4>
 Turku<br><a class="author_email" href="mailto:#"></a><a href="mailto:giulio.benedetti@utu.fi" class="email">giulio.benedetti@utu.fi</a>
       </address>
                   
-            <h4 data-toc-skip class="date">13 September 2026</h4>
+            <h4 data-toc-skip class="date">19 September 2026</h4>
       
 
       <div class="hidden name"><code>enviPathR.Rmd</code></div>
@@ -109,14 +109,14 @@ contributions are also welcome).</p>
 <span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://bioconductor.github.io/BiocManager/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"enviPathR"</span><span class="op">)</span></span></code></pre></div>
 <p>Beta version:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Minotau-R/enviPathR"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"enviPath/enviPathR"</span><span class="op">)</span></span></code></pre></div>
 <p>Then, we can import enviPathR and another couple of optional packages
 used in this tutorial.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">enviPathR</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r.igraph.org/" class="external-link">igraph</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span></span></code></pre></div>
-<p>All the following methods are further described in the enviPathR <a href="https://minotau-r.github.io/enviPathR/reference/index.html" target="_blank" class="external-link">function reference</a>.</p>
+<p>All the following methods are further described in the enviPathR <a href="https://envipath.github.io/enviPathR/reference/index.html" target="_blank" class="external-link">function reference</a>.</p>
 </div>
 <div class="section level3">
 <h3 id="eptypes-explore-envipath-database-structure">
@@ -802,6 +802,38 @@ steps.</p>
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td align="right">2</td>
+<td align="left">5</td>
+<td align="right">0.2500000</td>
+<td align="right">0.0291493</td>
+<td align="left">b7d77873-65b8-4164-9349-b8e7da31dcd6</td>
+<td align="left">bt0049</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">9</td>
+<td align="right">0.2500000</td>
+<td align="right">0.0033987</td>
+<td align="left">b7d77873-65b8-4164-9349-b8e7da31dcd6</td>
+<td align="left">bt0049</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">3</td>
+<td align="right">0.3414634</td>
+<td align="right">0.1165973</td>
+<td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
+<td align="left">bt0029</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">4</td>
+<td align="right">0.3414634</td>
+<td align="right">0.0398137</td>
+<td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
+<td align="left">bt0029</td>
+</tr>
+<tr class="odd">
 <td align="right">5</td>
 <td align="left">8</td>
 <td align="right">0.8750000</td>
@@ -810,6 +842,14 @@ steps.</p>
 <td align="left">bt0050</td>
 </tr>
 <tr class="even">
+<td align="right">4</td>
+<td align="left">6</td>
+<td align="right">0.3414634</td>
+<td align="right">0.0135949</td>
+<td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
+<td align="left">bt0029</td>
+</tr>
+<tr class="odd">
 <td align="right">3</td>
 <td align="left">4</td>
 <td align="right">0.3414634</td>
@@ -817,51 +857,11 @@ steps.</p>
 <td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
 <td align="left">bt0029</td>
 </tr>
-<tr class="odd">
-<td align="right">6</td>
-<td align="left">9</td>
-<td align="right">0.2500000</td>
-<td align="right">0.0033987</td>
-<td align="left">b7d77873-65b8-4164-9349-b8e7da31dcd6</td>
-<td align="left">bt0049</td>
-</tr>
 <tr class="even">
 <td align="right">1</td>
 <td align="left">2</td>
 <td align="right">0.3414634</td>
 <td align="right">0.1165973</td>
-<td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
-<td align="left">bt0029</td>
-</tr>
-<tr class="odd">
-<td align="right">0</td>
-<td align="left">1</td>
-<td align="right">0.3414634</td>
-<td align="right">0.3414634</td>
-<td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
-<td align="left">bt0029</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">5</td>
-<td align="right">0.2500000</td>
-<td align="right">0.0291493</td>
-<td align="left">b7d77873-65b8-4164-9349-b8e7da31dcd6</td>
-<td align="left">bt0049</td>
-</tr>
-<tr class="odd">
-<td align="right">2</td>
-<td align="left">4</td>
-<td align="right">0.3414634</td>
-<td align="right">0.0398137</td>
-<td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
-<td align="left">bt0029</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">6</td>
-<td align="right">0.3414634</td>
-<td align="right">0.0135949</td>
 <td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
 <td align="left">bt0029</td>
 </tr>
@@ -874,10 +874,10 @@ steps.</p>
 <td align="left">bt0049</td>
 </tr>
 <tr class="even">
-<td align="right">1</td>
-<td align="left">3</td>
+<td align="right">0</td>
+<td align="left">1</td>
 <td align="right">0.3414634</td>
-<td align="right">0.1165973</td>
+<td align="right">0.3414634</td>
 <td align="left">af13a678-1d06-402c-ae13-cb00f8830af4</td>
 <td align="left">bt0029</td>
 </tr>
@@ -989,7 +989,7 @@ layers.</p>
 <span><span class="co">#&gt; [49] desc_1.4.3          pkgdown_2.2.1       bslib_0.12.0       </span></span>
 <span><span class="co">#&gt; [52] pillar_1.11.1       gtable_0.3.6        Rcpp_1.1.2         </span></span>
 <span><span class="co">#&gt; [55] glue_1.8.1          ggforce_0.5.0       systemfonts_1.3.2  </span></span>
-<span><span class="co">#&gt; [58] xfun_0.60           tibble_3.3.1        tidyselect_1.2.1   </span></span>
+<span><span class="co">#&gt; [58] xfun_0.61           tibble_3.3.1        tidyselect_1.2.1   </span></span>
 <span><span class="co">#&gt; [61] farver_2.1.2        htmltools_0.5.9     labeling_0.4.3     </span></span>
 <span><span class="co">#&gt; [64] rmarkdown_2.32      compiler_4.6.1      S7_0.2.2</span></span></code></pre></div>
 </div>
