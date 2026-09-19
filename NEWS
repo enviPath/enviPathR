@@ -1,0 +1,3 @@
+Changes in version 0.99.x
+* Introduced epTypes, epLogin, epList, epLink, epGet and epModel
+* Submitted to Bioconductor
