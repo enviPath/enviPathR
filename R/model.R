@@ -72,7 +72,7 @@ NULL
 
 #' @export
 #' @rdname epModel
-#' @importFrom httr2 request req_method req_url_path_append req_body_form req_cookie_preserve req_perform resp_body_json
+#' @importFrom httr2 request req_method req_url_path_append req_body_form req_cookie_preserve resp_body_json
 epModel <- function(smiles, setting = NULL){
     
     if( smiles == "" ){
@@ -89,7 +89,7 @@ epModel <- function(smiles, setting = NULL){
         req_body_form(smiles = smiles, settingUri = setting) |>
         req_cookie_preserve(path = eP_env$cookies)
     
-    resp <- req_perform(req)
+    resp <- .ep_perform(req)
     
     out <- resp_body_json(resp, simplifyVector = TRUE)
     

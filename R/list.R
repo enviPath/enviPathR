@@ -49,7 +49,7 @@ NULL
 
 #' @export
 #' @rdname epList
-#' @importFrom httr2 req_url_path_append req_cookie_preserve req_perform resp_body_json
+#' @importFrom httr2 req_url_path_append req_cookie_preserve resp_body_json
 #' @importFrom stringr str_remove
 epList <- function(type, pkg = NULL){
     
@@ -66,7 +66,7 @@ epList <- function(type, pkg = NULL){
         
     req <- req_url_path_append(req, type)
     
-    resp <- req_perform(req)
+    resp <- .ep_perform(req)
     
     out <- resp_body_json(resp, simplifyVector = TRUE)
     # Extract data.frame

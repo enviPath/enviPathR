@@ -1,5 +1,11 @@
 
 test_that("list", {
+    
+    expect_error(
+        epList("wrong"),
+        "Not found. Please check that 'type' and 'pkg' are correct.",
+        fixed = TRUE
+    )
       
     pkg_df <- epList("package")
       

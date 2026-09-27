@@ -7,6 +7,12 @@ test_that("model", {
         fixed = TRUE
     )
     
+    expect_error(
+        epModel("wrong"),
+        "Action failed. Please check that 'smiles' and 'setting' are correct.",
+        fixed = TRUE
+    )
+    
     smiles <- "ClC(Cl)=C(Cl)Cl"
     former_out <- epModel(smiles)
     

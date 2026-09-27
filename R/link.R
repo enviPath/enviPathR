@@ -52,7 +52,7 @@ epLink <- function(from, to, init = NULL, pkg = NULL){
     out <- bplapply(init, .ep_link, from = from, to = specTo, pkg = pkg)
     
     linkmap <- data.frame(
-        x = rep(init, lengths(out)),
+        x = rep(init, lengths(out, use.names = FALSE)),
         y = unlist(out, use.names = FALSE)
     )
     
@@ -76,14 +76,14 @@ epLink <- function(from, to, init = NULL, pkg = NULL){
 }
 
 
-#' @importFrom httr2 request req_url_path_append req_cookie_preserve req_perform resp_body_json
+#' @importFrom httr2 request req_url_path_append req_cookie_preserve resp_body_json
 .ep_link <- function(init, from, to, pkg){
     
     req <- request(eP_env$url) |>
         req_url_path_append("package", pkg, from, init) |>
         req_cookie_preserve(path = eP_env$cookies)
     
-    resp <- req_perform(req)
+    resp <- .ep_perform(req)
     
     out <- resp_body_json(resp, simplifyVector = TRUE)
     

@@ -56,7 +56,7 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL){
     return(out)
 } 
 
-#' @importFrom httr2 request req_url_path_append req_cookie_preserve req_perform resp_body_json
+#' @importFrom httr2 request req_url_path_append req_cookie_preserve resp_body_json
 .ep_get <- function(init, type, pkg, property = NULL){
     
     req <- request(eP_env$url) |>
@@ -65,7 +65,7 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL){
     
     if( !is.null(property) ) req <- req_url_path_append(req, property)
     
-    resp <- req_perform(req)
+    resp <- .ep_perform(req)
     
     out <- resp_body_json(resp, simplifyVector = TRUE)
     
