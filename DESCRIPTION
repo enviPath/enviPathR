@@ -12,8 +12,8 @@ Description:
     reactions and produced compounds. This package enables the programmatic
     access to enviPath by porting the database RESTful API from R.
 biocViews:
-    Software, DataImport, Cheminformatics, Microbiome, Annotation, Pathways,
-    Visualization, Network, GraphAndNetwork
+    Software, DataImport, Cheminformatics, Annotation, Pathways,
+    FunctionalPrediction
 Imports:
     BiocParallel,
     httr2,
@@ -29,6 +29,7 @@ Suggests:
     ggraph,
     igraph,
     knitr,
+    remotes,
     rmarkdown,
     testthat (>= 3.0.0)
 URL: https://envipath.github.io/enviPathR/

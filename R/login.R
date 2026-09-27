@@ -22,6 +22,9 @@
 #' }
 #' # Perform login
 #' epLogin(username, password)
+#' 
+#' # Perform logout
+#' epLogout()
 NULL
 
 #' @export
@@ -41,6 +44,19 @@ epLogin <- function(username, password){
     resp <- .ep_perform(req)
     # Print message upon successful login
     message("Hi nature lover, welcome to enviPath!")
+    invisible(NULL)
+}
+
+#' @export
+#' @rdname epLogin
+epLogout <- function(){
+    if( file.exists(eP_env$cookies) ){
+        file.remove(eP_env$cookies)
+        msg <- "Logged out successfully."
+    }else{
+        msg <- "Already logged out."
+    }
+    message(msg)
     invisible(NULL)
 }
 
