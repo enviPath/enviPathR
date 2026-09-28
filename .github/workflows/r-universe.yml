@@ -10,6 +10,3 @@ jobs:
     with:
       universe: bioc
       organization: bioconductor
-    secrets:
-      EP_USERNAME: ${{ secrets.EP_USERNAME }}
-      EP_PASSWORD: ${{ secrets.EP_PASSWORD }}
