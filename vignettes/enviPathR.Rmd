@@ -144,7 +144,7 @@ cached package cookies are cleared.
 change_state()
 ```
 
-```{r login}
+```{r login, eval = is_active}
 # Log into your enviPath account
 epLogin(username, password)
 ```
@@ -354,10 +354,18 @@ ggraph(path_graph, layout = "sugiyama") +
     theme_graph(base_family = "")
 ```
 
+### `epLogout`: log out of an enviPath personal account
+
+When finished, for security remember clearing the login cookies with `epLogout`. If skipped, the next sessions will have access to your enviPath account without
+having to call `epLogin`.
+
+```{r logout, eval = is_active}
+epLogout()
+```
+
 ```{r, include = FALSE}
 end_vignette()
 ```
-
 
 ## Reproducibility
 
