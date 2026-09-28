@@ -26,22 +26,11 @@ epList returns a list with info on objects available in enviPath.
     password <- Sys.getenv("EP_PASSWORD")
     
     is_active <- nzchar(username) && nzchar(password)
-    
-    library(httptest2)
-    start_vignette("httptest/list")
-    change_state()
-    
-    if( is_active ){
-        # Perform login
-        epLogin(username, password)
-        # Clear httptest cache
-        unlink(
-            system.file("vignettes/httptest/list"),
-            recursive = TRUE,
-            force = TRUE
-        )
-    }
 }
+if( is_active ){
+# Perform login with your credentials
+epLogin(username, password)
+
 # List packages
 pkg_df <- epList("package")
 
@@ -64,7 +53,5 @@ path_df <- epList("pathway", pkg = pkg_id)
 
 # View some pathways
 head(path_df)
-\dontshow{
-    end_vignette()
 }
 }
