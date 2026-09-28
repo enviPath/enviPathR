@@ -1,0 +1,24 @@
+{
+    "setting": [
+        {
+            "id": "https://envipath.org/setting/1d915a48-286a-4394-9693-bfaa187326a5",
+            "identifier": "setting",
+            "name": "Global Setting - enviFormer"
+        },
+        {
+            "id": "https://envipath.org/setting/3c8e789f-cf5f-4db2-9b77-b152d32e52e9",
+            "identifier": "setting",
+            "name": "Global Setting - ECC and App Domain"
+        },
+        {
+            "id": "https://envipath.org/setting/3cda8e56-f4ff-47a8-b68c-4cfcfc4e8c2a",
+            "identifier": "setting",
+            "name": "Global Setting - ECC and App Domain - PEPPER"
+        },
+        {
+            "id": "https://envipath.org/setting/a0fbc3d8-ca45-44f1-9c3c-80d8531ffe25",
+            "identifier": "setting",
+            "name": "Global Setting - BBD Rules"
+        }
+    ]
+}

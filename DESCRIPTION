@@ -1,5 +1,5 @@
 Package: enviPathR
-Title: the R client for the enviPath RESTful API
+Title: The R client for the enviPath RESTful API
 Version: 0.99.0
 Authors@R:
     c(person(given = "Giulio", family = "Benedetti", role = c("aut", "cre"),
@@ -10,7 +10,8 @@ Description:
     functional annotation and pathway prediction of microbial communities,
     providing knowledge on biotransformation pathways along with the chemical
     reactions and produced compounds. This package enables the programmatic
-    access to enviPath by porting the database RESTful API from R.
+    access to enviPath by porting the database RESTful API from R. This includes
+    methods to both retrieve entries and predict pathways for custom compounds.
 biocViews:
     Software, DataImport, Cheminformatics, Annotation, Pathways,
     FunctionalPrediction

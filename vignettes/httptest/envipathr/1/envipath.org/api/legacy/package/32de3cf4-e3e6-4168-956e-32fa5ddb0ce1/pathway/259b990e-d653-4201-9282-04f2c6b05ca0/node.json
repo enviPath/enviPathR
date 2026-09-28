@@ -1,0 +1,22 @@
+{
+    "node": [
+        {
+            "id": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/pathway/259b990e-d653-4201-9282-04f2c6b05ca0/node/dd59cd8c-6e19-4dec-b119-47595607776e",
+            "name": "Hydrogen uranyl phosphate",
+            "reviewStatus": "reviewed",
+            "identifier": "node"
+        },
+        {
+            "id": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/pathway/259b990e-d653-4201-9282-04f2c6b05ca0/node/f06d31fa-d9fe-470d-b1b8-72237d1f96e1",
+            "name": "Uraninite",
+            "reviewStatus": "reviewed",
+            "identifier": "node"
+        },
+        {
+            "id": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/pathway/259b990e-d653-4201-9282-04f2c6b05ca0/node/b36d17e7-e73f-47f7-8136-b5f357fa7e26",
+            "name": "Uranyl ion",
+            "reviewStatus": "reviewed",
+            "identifier": "node"
+        }
+    ]
+}
