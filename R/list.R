@@ -19,10 +19,24 @@
 #' \dontshow{
 #'     username <- Sys.getenv("EP_USERNAME")
 #'     password <- Sys.getenv("EP_PASSWORD")
+#'     
+#'     is_active <- nzchar(username) && nzchar(password)
+#'     
+#'     library(httptest2)
+#'     start_vignette("httptest/list")
+#'     change_state()
+#'     
+#'     if( is_active ){
+#'         # Perform login
+#'         epLogin(username, password)
+#'         # Clear httptest cache
+#'         unlink(
+#'             system.file("vignettes/httptest/list"),
+#'             recursive = TRUE,
+#'             force = TRUE
+#'         )
+#'     }
 #' }
-#' # Perform login
-#' epLogin(username, password)
-#' 
 #' # List packages
 #' pkg_df <- epList("package")
 #' 
@@ -45,11 +59,14 @@
 #' 
 #' # View some pathways
 #' head(path_df)
+#' \dontshow{
+#'     end_vignette()
+#' }
 NULL
 
 #' @export
 #' @rdname epList
-#' @importFrom httr2 req_url_path_append req_cookie_preserve req_perform resp_body_json
+#' @importFrom httr2 req_url_path_append req_cookie_preserve resp_body_json
 #' @importFrom stringr str_remove
 epList <- function(type, pkg = NULL){
     
@@ -66,7 +83,7 @@ epList <- function(type, pkg = NULL){
         
     req <- req_url_path_append(req, type)
     
-    resp <- req_perform(req)
+    resp <- .ep_perform(req)
     
     out <- resp_body_json(resp, simplifyVector = TRUE)
     # Extract data.frame

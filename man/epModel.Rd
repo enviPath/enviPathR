@@ -26,12 +26,26 @@ epModel predicts the biotransformation pathway for a compound expressed with
 \dontshow{
     username <- Sys.getenv("EP_USERNAME")
     password <- Sys.getenv("EP_PASSWORD")
+    
+    is_active <- nzchar(username) && nzchar(password)
+    
+    library(httptest2)
+    start_vignette("httptest/model")
+    change_state()
+    
+    if( is_active ){
+        # Perform login
+        epLogin(username, password)
+        # Clear httptest cache
+        unlink(
+            system.file("vignettes/httptest/model"),
+            recursive = TRUE,
+            force = TRUE
+        )
+    }
 }
 library(igraph)
 library(ggraph)
-
-# Perform login
-epLogin(username, password)
 
 # Define smiles of interest
 smiles <- "ClC(Cl)=C(Cl)Cl"
@@ -72,5 +86,8 @@ ggraph(path_graph, layout = "sugiyama") +
     scale_edge_colour_continuous(
         limits = c(0, 1), low = "white", high = "red"
     ) +
-    theme_graph()
+    theme_graph(base_family = "")
+\dontshow{
+    end_vignette()
+}
 }

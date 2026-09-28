@@ -5,6 +5,7 @@ reference:
   - enviPathR
   - epTypes
   - epLogin
+  - epLogout
   - epList
   - epGet
   - epLink

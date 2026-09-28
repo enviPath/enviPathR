@@ -2,9 +2,12 @@
 % Please edit documentation in R/login.R
 \name{epLogin}
 \alias{epLogin}
+\alias{epLogout}
 \title{Log into enviPath account}
 \usage{
 epLogin(username, password)
+
+epLogout()
 }
 \arguments{
 \item{username}{\code{Character scalar}. String specifying the username
@@ -24,7 +27,29 @@ enviPath API.
 \dontshow{
     username <- Sys.getenv("EP_USERNAME")
     password <- Sys.getenv("EP_PASSWORD")
+    
+    is_active <- nzchar(username) && nzchar(password)
+    
+    library(httptest2)
+    start_vignette("httptest/login")
+    
+    if( is_active ){
+        # Clear httptest cache
+        unlink(
+            system.file("vignettes/httptest/login"),
+            recursive = TRUE,
+            force = TRUE
+        )
+    }
+    
+    change_state()
 }
 # Perform login
 epLogin(username, password)
+
+# Perform logout
+epLogout()
+\dontshow{
+    end_vignette()
+}
 }

@@ -28,11 +28,29 @@
 #'     username <- Sys.getenv("EP_USERNAME")
 #'     password <- Sys.getenv("EP_PASSWORD")
 #'     
-#'     epLogin(username, password)
+#'     is_active <- nzchar(username) && nzchar(password)
+#'     
+#'     library(httptest2)
+#'     start_vignette("httptest/link")
+#'     change_state()
+#'     
+#'     if( is_active ){
+#'         # Perform login
+#'         epLogin(username, password)
+#'         # Clear httptest cache
+#'         unlink(
+#'             system.file("vignettes/httptest/link"),
+#'             recursive = TRUE,
+#'             force = TRUE
+#'         )
+#'     }
 #' }
 #' rxn_id <- "2b6bbcc5-77f4-4bed-92a9-731cdc978f6a"
 #' 
 #' epLink("reaction", "compound", rxn_id)
+#' \dontshow{
+#'     end_vignette()
+#' }
 NULL
 
 #' @export
@@ -52,7 +70,7 @@ epLink <- function(from, to, init = NULL, pkg = NULL){
     out <- bplapply(init, .ep_link, from = from, to = specTo, pkg = pkg)
     
     linkmap <- data.frame(
-        x = rep(init, lengths(out)),
+        x = rep(init, lengths(out, use.names = FALSE)),
         y = unlist(out, use.names = FALSE)
     )
     
@@ -76,14 +94,14 @@ epLink <- function(from, to, init = NULL, pkg = NULL){
 }
 
 
-#' @importFrom httr2 request req_url_path_append req_cookie_preserve req_perform resp_body_json
+#' @importFrom httr2 request req_url_path_append req_cookie_preserve resp_body_json
 .ep_link <- function(init, from, to, pkg){
     
     req <- request(eP_env$url) |>
         req_url_path_append("package", pkg, from, init) |>
         req_cookie_preserve(path = eP_env$cookies)
     
-    resp <- req_perform(req)
+    resp <- .ep_perform(req)
     
     out <- resp_body_json(resp, simplifyVector = TRUE)
     
