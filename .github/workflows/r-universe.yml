@@ -1,6 +1,6 @@
 name: Test R-universe
 on:
-  pull_request:
+  push:
     branches:
       - devel
 jobs:
