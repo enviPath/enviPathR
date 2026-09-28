@@ -1,0 +1,186 @@
+{
+    "nodes": [
+        {
+            "depth": 0,
+            "smiles": "ClC(Cl)=C(Cl)Cl",
+            "id": 0
+        },
+        {
+            "depth": 1,
+            "smiles": "ClC=C(Cl)Cl",
+            "id": 1
+        },
+        {
+            "depth": 2,
+            "smiles": "C=C(Cl)Cl",
+            "id": 2
+        },
+        {
+            "depth": 2,
+            "smiles": "ClC=CCl",
+            "id": 3
+        },
+        {
+            "depth": 3,
+            "smiles": "C=CCl",
+            "id": 4
+        },
+        {
+            "depth": 3,
+            "smiles": "ClC1(Cl)CO1",
+            "id": 5
+        },
+        {
+            "depth": 4,
+            "smiles": "C=C",
+            "id": 6
+        },
+        {
+            "depth": 4,
+            "smiles": "ClC1CO1",
+            "id": 7
+        },
+        {
+            "depth": 4,
+            "smiles": "OCC(O)(Cl)Cl",
+            "id": 8
+        },
+        {
+            "depth": 5,
+            "smiles": "C1CO1",
+            "id": 9
+        }
+    ],
+    "edges": [
+        {
+            "from": 2,
+            "to": [
+                4
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/af13a678-1d06-402c-ae13-cb00f8830af4",
+                "uuid": "af13a678-1d06-402c-ae13-cb00f8830af4",
+                "name": "bt0029"
+            },
+            "probability": 0.3414634146341463,
+            "multiGenProbability": 0.03981369974318422
+        },
+        {
+            "from": 1,
+            "to": [
+                2
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/af13a678-1d06-402c-ae13-cb00f8830af4",
+                "uuid": "af13a678-1d06-402c-ae13-cb00f8830af4",
+                "name": "bt0029"
+            },
+            "probability": 0.3414634146341463,
+            "multiGenProbability": 0.11659726353361093
+        },
+        {
+            "from": 3,
+            "to": [
+                4
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/af13a678-1d06-402c-ae13-cb00f8830af4",
+                "uuid": "af13a678-1d06-402c-ae13-cb00f8830af4",
+                "name": "bt0029"
+            },
+            "probability": 0.3414634146341463,
+            "multiGenProbability": 0.03981369974318422
+        },
+        {
+            "from": 2,
+            "to": [
+                5
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/b7d77873-65b8-4164-9349-b8e7da31dcd6",
+                "uuid": "b7d77873-65b8-4164-9349-b8e7da31dcd6",
+                "name": "bt0049"
+            },
+            "probability": 0.25,
+            "multiGenProbability": 0.02914931588340273
+        },
+        {
+            "from": 4,
+            "to": [
+                7
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/b7d77873-65b8-4164-9349-b8e7da31dcd6",
+                "uuid": "b7d77873-65b8-4164-9349-b8e7da31dcd6",
+                "name": "bt0049"
+            },
+            "probability": 0.25,
+            "multiGenProbability": 0.009953424935796054
+        },
+        {
+            "from": 5,
+            "to": [
+                8
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/f628ec30-7088-4c16-a37b-bb4c313236a9",
+                "uuid": "f628ec30-7088-4c16-a37b-bb4c313236a9",
+                "name": "bt0050"
+            },
+            "probability": 0.875,
+            "multiGenProbability": 0.02550565139797739
+        },
+        {
+            "from": 0,
+            "to": [
+                1
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/af13a678-1d06-402c-ae13-cb00f8830af4",
+                "uuid": "af13a678-1d06-402c-ae13-cb00f8830af4",
+                "name": "bt0029"
+            },
+            "probability": 0.3414634146341463,
+            "multiGenProbability": 0.3414634146341463
+        },
+        {
+            "from": 1,
+            "to": [
+                3
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/af13a678-1d06-402c-ae13-cb00f8830af4",
+                "uuid": "af13a678-1d06-402c-ae13-cb00f8830af4",
+                "name": "bt0029"
+            },
+            "probability": 0.3414634146341463,
+            "multiGenProbability": 0.11659726353361093
+        },
+        {
+            "from": 6,
+            "to": [
+                9
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/b7d77873-65b8-4164-9349-b8e7da31dcd6",
+                "uuid": "b7d77873-65b8-4164-9349-b8e7da31dcd6",
+                "name": "bt0049"
+            },
+            "probability": 0.25,
+            "multiGenProbability": 0.003398730465881579
+        },
+        {
+            "from": 4,
+            "to": [
+                6
+            ],
+            "rule": {
+                "url": "https://envipath.org/package/32de3cf4-e3e6-4168-956e-32fa5ddb0ce1/parallel-rule/af13a678-1d06-402c-ae13-cb00f8830af4",
+                "uuid": "af13a678-1d06-402c-ae13-cb00f8830af4",
+                "name": "bt0029"
+            },
+            "probability": 0.3414634146341463,
+            "multiGenProbability": 0.013594921863526316
+        }
+    ]
+}

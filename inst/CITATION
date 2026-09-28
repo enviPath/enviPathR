@@ -1,24 +1,11 @@
-citHeader("To cite enviPathR in publications use:")
-
-citEntry(
-  entry    = "Article",
-  title    = "Advancements in biotransformation pathway prediction: enhancements, datasets, and novel functionalities in enviPath",
-  author   = personList(
-      as.person("Jasmin Hafner"),
-      as.person("Tim Lorsbach"),
-      as.person("Sebastian Schmidt"),
-      as.person("Liam Brydon"),
-      as.person("Katharina Dost"),
-      as.person("Kunyang Zhang"),
-      as.person("Kathrin Fenner"),
-      as.person("Jörg Wicker")
-  ),
-  journal  = "Journal of Cheminformatics",
-  year     = "2024",
-  doi      = "https://doi.org/10.1186/s13321-024-00881-6",
-  textVersion = paste("Hafner, J., Lorsbach, T., Schmidt, S., Brydon, L.,",
-  "Dost, K., Zhang, K., Fenner, K., and Wicker, J. (2024). Advancements in",
-  "biotransformation pathway prediction: enhancements, datasets, and novel",
-  "functionalities in enviPath. Journal of Cheminformatics, 16(1), 93.",
-  "doi: https://doi.org/10.1186/s13321-024-00881-6")
+bibentry(
+  bibtype = "Article",
+  title = "Advancements in biotransformation pathway prediction: enhancements, datasets, and novel functionalities in enviPath",
+  author = c(person("Jasmin", "Hafner"), person("Tim", "Lorsbach"), person("Sebastian", "Schmidt"), person("Liam", "Brydon"), person("Katharina", "Dost"), person("Kunyang", "Zhang"), person("Kathrin", "Fenner"), person("Jörg", "Wicker")),
+  journal = "Journal of Cheminformatics",
+  year = "2024",
+  volume = "16",
+  number = "1",
+  pages = "93",
+  doi = "10.1186/s13321-024-00881-6"
 )

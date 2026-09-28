@@ -30,6 +30,20 @@ knitr::opts_chunk$set(
 
 username <- Sys.getenv("EP_USERNAME")
 password <- Sys.getenv("EP_PASSWORD")
+
+is_active <- nzchar(username) && nzchar(password)
+
+if( is_active ){
+    # Clear httptest cache
+    unlink(
+        system.file("vignettes/httptest/envipathr"),
+        recursive = TRUE,
+        force = TRUE
+    )
+}
+
+library(httptest2)
+start_vignette("httptest/envipathr")
 ```
 
 ## Introduction
@@ -125,6 +139,10 @@ enviPathR. A free (for academic use) account can be created at the [enviPath
 website](https://envipath.org/){target="_blank"}. The same login credentials can
 then be passed to `epLogin`, which keeps you permanently logged in unless the
 cached package cookies are cleared.
+
+```{r, include = FALSE}
+change_state()
+```
 
 ```{r login}
 # Log into your enviPath account
@@ -266,6 +284,10 @@ Pathway prediction is performed with `epModel`, which uses the enviFormer model
 by default. The output list contains two data frames representing the nodes
 (compounds) and edges (reactions) of the predicted pathway, respectively.
 
+```{r, include = FALSE}
+change_state()
+```
+
 ```{r model-former}
 # Define smiles of interest
 smiles <- "ClC(Cl)=C(Cl)Cl"
@@ -283,6 +305,10 @@ kable(former_out$edges)
 Different model settings can be specified with the argument `setting`. For
 example, the PEPPER model can be used which also returns half-lime estimates for
 the predicted degradation steps.
+
+```{r, include = FALSE}
+change_state()
+```
 
 ```{r model-pepper}
 # Set id for PEPPER model setting
@@ -325,8 +351,13 @@ ggraph(path_graph, layout = "sugiyama") +
     geom_node_point(size = 3) +
     geom_node_text(aes(label = name), vjust = 2) +
     scale_edge_colour_continuous(limits = c(0, 1), low = "white", high = "red") +
-    theme_graph()
+    theme_graph(base_family = "")
 ```
+
+```{r, include = FALSE}
+end_vignette()
+```
+
 
 ## Reproducibility
 

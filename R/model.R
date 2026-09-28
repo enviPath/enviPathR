@@ -21,12 +21,26 @@
 #' \dontshow{
 #'     username <- Sys.getenv("EP_USERNAME")
 #'     password <- Sys.getenv("EP_PASSWORD")
+#'     
+#'     is_active <- nzchar(username) && nzchar(password)
+#'     
+#'     library(httptest2)
+#'     start_vignette("httptest/model")
+#'     change_state()
+#'     
+#'     if( is_active ){
+#'         # Perform login
+#'         epLogin(username, password)
+#'         # Clear httptest cache
+#'         unlink(
+#'             system.file("vignettes/httptest/model"),
+#'             recursive = TRUE,
+#'             force = TRUE
+#'         )
+#'     }
 #' }
 #' library(igraph)
 #' library(ggraph)
-#' 
-#' # Perform login
-#' epLogin(username, password)
 #' 
 #' # Define smiles of interest
 #' smiles <- "ClC(Cl)=C(Cl)Cl"
@@ -67,12 +81,15 @@
 #'     scale_edge_colour_continuous(
 #'         limits = c(0, 1), low = "white", high = "red"
 #'     ) +
-#'     theme_graph()
+#'     theme_graph(base_family = "")
+#' \dontshow{
+#'     end_vignette()
+#' }
 NULL
 
 #' @export
 #' @rdname epModel
-#' @importFrom httr2 request req_method req_url_path_append req_body_form req_cookie_preserve req_perform resp_body_json
+#' @importFrom httr2 request req_method req_url_path_append req_body_form req_cookie_preserve resp_body_json
 epModel <- function(smiles, setting = NULL){
     
     if( smiles == "" ){
@@ -89,7 +106,7 @@ epModel <- function(smiles, setting = NULL){
         req_body_form(smiles = smiles, settingUri = setting) |>
         req_cookie_preserve(path = eP_env$cookies)
     
-    resp <- req_perform(req)
+    resp <- .ep_perform(req)
     
     out <- resp_body_json(resp, simplifyVector = TRUE)
     

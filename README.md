@@ -27,6 +27,13 @@ Beta version:
 remotes::install_github("enviPath/enviPathR")
 ```
 
+## Terms of use
+
+While enviPathR itself is openly available under an Artistic 2.0 license, the
+enviPath database and pathway prediction system is freely accessible only for
+academic use. More information on scope of use and commercial licensing can be
+found in the [enviPath terms of use](https://envipath.org/terms).
+
 ## References
 
 If you use enviPath in your research please cite:
