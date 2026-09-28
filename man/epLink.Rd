@@ -4,7 +4,7 @@
 \alias{epLink}
 \title{Link enviPath objects}
 \usage{
-epLink(from, to, init = NULL, pkg = NULL)
+epLink(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate = 5)
 }
 \arguments{
 \item{from}{\code{Character scalar}. String specifying the object type from
@@ -21,6 +21,15 @@ objects belonging to \code{from} in \code{pkg} are used.
 \item{pkg}{\code{Character scalar}. String specifying the unique identifier
 of the package from which objects should be mapped When null, EAWAG-BBD is
 used. (Default: \code{NULL})}
+
+\item{BPPARAM}{A
+\code{\link[BiocParallel:BiocParallelParam-class]{BiocParallelParam}}
+object specifying how the requests should be parallelised.
+(Default: \code{\link[BiocParallel:register]{bpparam()}})}
+
+\item{rate}{\code{Numeric scalar}. Integer number specifying the amount of
+requests per second to be sent to the enviPath API when \code{BPPARAM} is
+not serial. (Default: \code{5})}
 }
 \value{
 A data frame with links between from and to.

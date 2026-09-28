@@ -4,7 +4,14 @@
 \alias{epGet}
 \title{Get enviPath objects}
 \usage{
-epGet(type, init = NULL, pkg = NULL, property = NULL)
+epGet(
+  type,
+  init = NULL,
+  pkg = NULL,
+  property = NULL,
+  BPPARAM = bpparam(),
+  rate = 5
+)
 }
 \arguments{
 \item{type}{\code{Character scalar}. String specifying the object type to be
@@ -21,6 +28,15 @@ is used. (Default: \code{NULL})}
 \item{property}{\code{Character scalar}. String specifying the property to be
 fetched from the objects. When null, all elements of the objects are
 returned. (Default: \code{NULL})}
+
+\item{BPPARAM}{A
+\code{\link[BiocParallel:BiocParallelParam-class]{BiocParallelParam}}
+object specifying how the requests should be parallelised.
+(Default: \code{\link[BiocParallel:register]{bpparam()}})}
+
+\item{rate}{\code{Numeric scalar}. Integer number specifying the amount of
+requests per second to be sent to the enviPath API when \code{BPPARAM} is
+not serial. (Default: \code{5})}
 }
 \value{
 A list of objects

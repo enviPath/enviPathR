@@ -20,6 +20,15 @@
 #'   of the package from which objects should be mapped When null, EAWAG-BBD is
 #'   used. (Default: \code{NULL})
 #' 
+#' @param BPPARAM A
+#'   \code{\link[BiocParallel:BiocParallelParam-class]{BiocParallelParam}}
+#'   object specifying how the requests should be parallelised.
+#'   (Default: \code{\link[BiocParallel:register]{bpparam()}})
+#' 
+#' @param rate \code{Numeric scalar}. Integer number specifying the amount of
+#'   requests per second to be sent to the enviPath API when \code{BPPARAM} is
+#'   not serial. (Default: \code{5})
+#' 
 #' @returns
 #' A data frame with links between from and to.
 #' 
@@ -44,10 +53,10 @@ NULL
 
 #' @export
 #' @rdname epLink
-#' @importFrom BiocParallel bplapply
+#' @importFrom BiocParallel bplapply bpparam
 #' @importFrom stringr str_remove
 #' @importFrom stats complete.cases
-epLink <- function(from, to, init = NULL, pkg = NULL){
+epLink <- function(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate = 5){
     
     if( is.null(pkg) ) pkg <- "32de3cf4-e3e6-4168-956e-32fa5ddb0ce1"
     
@@ -56,7 +65,12 @@ epLink <- function(from, to, init = NULL, pkg = NULL){
     by <- paste(from, to, sep = "2")
     specTo <- eP_env$links[[by]]
 
-    out <- bplapply(init, .ep_link, from = from, to = specTo, pkg = pkg)
+    out <- bplapply(
+        init,
+        .ep_link,
+        from = from, to = specTo, pkg = pkg, rate = rate,
+        BPPARAM = BPPARAM
+    )
     
     linkmap <- data.frame(
         x = rep(init, lengths(out, use.names = FALSE)),
@@ -83,12 +97,13 @@ epLink <- function(from, to, init = NULL, pkg = NULL){
 }
 
 
-#' @importFrom httr2 request req_url_path_append req_cookie_preserve resp_body_json
-.ep_link <- function(init, from, to, pkg){
+#' @importFrom httr2 request req_url_path_append req_cookie_preserve req_throttle resp_body_json
+.ep_link <- function(init, from, to, pkg, rate){
     
     req <- request(eP_env$url) |>
         req_url_path_append("package", pkg, from, init) |>
-        req_cookie_preserve(path = eP_env$cookies)
+        req_cookie_preserve(path = eP_env$cookies) |>
+        req_throttle(rate = rate)
     
     resp <- .ep_perform(req)
     

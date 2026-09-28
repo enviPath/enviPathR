@@ -20,6 +20,15 @@
 #'   fetched from the objects. When null, all elements of the objects are
 #'   returned. (Default: \code{NULL})
 #' 
+#' @param BPPARAM A
+#'   \code{\link[BiocParallel:BiocParallelParam-class]{BiocParallelParam}}
+#'   object specifying how the requests should be parallelised.
+#'   (Default: \code{\link[BiocParallel:register]{bpparam()}})
+#' 
+#' @param rate \code{Numeric scalar}. Integer number specifying the amount of
+#'   requests per second to be sent to the enviPath API when \code{BPPARAM} is
+#'   not serial. (Default: \code{5})
+#' 
 #' @returns
 #' A list of objects
 #' 
@@ -44,8 +53,9 @@ NULL
 
 #' @export
 #' @rdname epGet
-#' @importFrom BiocParallel bpmapply
-epGet <- function(type, init = NULL, pkg = NULL, property = NULL){
+#' @importFrom BiocParallel bpmapply bpparam
+epGet <- function(type, init = NULL, pkg = NULL, property = NULL,
+    BPPARAM = bpparam(), rate = 5){
     
     if( is.null(pkg) ) pkg <- "32de3cf4-e3e6-4168-956e-32fa5ddb0ce1"
     
@@ -54,8 +64,9 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL){
     out <- bpmapply(
         .ep_get,
         init,
-        MoreArgs = list(type = type, pkg = pkg, property = property),
-        SIMPLIFY = FALSE
+        MoreArgs = list(type = type, pkg = pkg, property = property, rate = rate),
+        SIMPLIFY = FALSE,
+        BPPARAM = BPPARAM
     )
     
     if( length(out) == 1L ) out <- out[[1L]]
@@ -63,12 +74,13 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL){
     return(out)
 } 
 
-#' @importFrom httr2 request req_url_path_append req_cookie_preserve resp_body_json
-.ep_get <- function(init, type, pkg, property = NULL){
+#' @importFrom httr2 request req_url_path_append req_cookie_preserve req_throttle resp_body_json
+.ep_get <- function(init, type, pkg, property, rate){
     
     req <- request(eP_env$url) |>
         req_url_path_append("package", pkg, type, init) |>
-        req_cookie_preserve(path = eP_env$cookies)
+        req_cookie_preserve(path = eP_env$cookies) |>
+        req_throttle(rate = rate)
     
     if( !is.null(property) ) req <- req_url_path_append(req, property)
     
