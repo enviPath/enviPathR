@@ -90,10 +90,17 @@ used. (Default: <code>NULL</code>)</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-msg co"><span class="r-pr">#&gt;</span> Hi nature lover, welcome to enviPath!</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span><span class="op">(</span> <span class="va">is_active</span> <span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># Perform login with your credentials</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="epLogin.html">epLogin</a></span><span class="op">(</span><span class="va">username</span>, <span class="va">password</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Define custom reaction identifier</span></span></span>
 <span class="r-in"><span><span class="va">rxn_id</span> <span class="op">&lt;-</span> <span class="st">"2b6bbcc5-77f4-4bed-92a9-731cdc978f6a"</span></span></span>
 <span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Link custom reaction to related compounds</span></span></span>
 <span class="r-in"><span><span class="fu">epLink</span><span class="op">(</span><span class="st">"reaction"</span>, <span class="st">"compound"</span>, <span class="va">rxn_id</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Hi nature lover, welcome to enviPath!</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                               reaction                             compound</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1 2b6bbcc5-77f4-4bed-92a9-731cdc978f6a 7281d994-9f4a-4f7f-9e50-90b131c11da3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2 2b6bbcc5-77f4-4bed-92a9-731cdc978f6a befe8eeb-e8f8-4b4a-90b1-d0584a75f8cb</span>

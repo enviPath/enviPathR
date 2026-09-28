@@ -81,12 +81,14 @@ used to log into an enviPath personal account.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Perform login</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span><span class="op">(</span> <span class="va">is_active</span> <span class="op">)</span><span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co"># Perform login with your credentials</span></span></span>
 <span class="r-in"><span><span class="fu">epLogin</span><span class="op">(</span><span class="va">username</span>, <span class="va">password</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Hi nature lover, welcome to enviPath!</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Perform logout</span></span></span>
 <span class="r-in"><span><span class="fu">epLogout</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Hi nature lover, welcome to enviPath!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Logged out successfully.</span>
 </code></pre></div>
     </div>
