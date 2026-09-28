@@ -20,18 +20,18 @@ Imports:
     stats,
     stringr,
     tools
+Suggests:
+    BiocStyle,
+    ggraph,
+    httptest2,
+    igraph,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
 License: Artistic-2.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
-Suggests:
-    BiocStyle,
-    ggraph,
-    igraph,
-    knitr,
-    remotes,
-    rmarkdown,
-    testthat (>= 3.0.0)
 URL: https://envipath.github.io/enviPathR/
 BugReports: https://github.com/enviPath/enviPathR/issues
 Config/testthat/edition: 3
