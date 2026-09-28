@@ -34,26 +34,15 @@ epLink returns mappings between enviPath object types.
     password <- Sys.getenv("EP_PASSWORD")
     
     is_active <- nzchar(username) && nzchar(password)
-    
-    library(httptest2)
-    start_vignette("httptest/link")
-    change_state()
-    
-    if( is_active ){
-        # Perform login
-        epLogin(username, password)
-        # Clear httptest cache
-        unlink(
-            system.file("vignettes/httptest/link"),
-            recursive = TRUE,
-            force = TRUE
-        )
-    }
 }
+if( is_active ){
+# Perform login with your credentials
+epLogin(username, password)
+
+# Define custom reaction identifier
 rxn_id <- "2b6bbcc5-77f4-4bed-92a9-731cdc978f6a"
 
+# Link custom reaction to related compounds
 epLink("reaction", "compound", rxn_id)
-\dontshow{
-    end_vignette()
 }
 }

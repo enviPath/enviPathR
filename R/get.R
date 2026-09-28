@@ -29,27 +29,16 @@
 #'     password <- Sys.getenv("EP_PASSWORD")
 #'     
 #'     is_active <- nzchar(username) && nzchar(password)
-#'     
-#'     library(httptest2)
-#'     start_vignette("httptest/get")
-#'     change_state()
-#'     
-#'     if( is_active ){
-#'         # Perform login
-#'         epLogin(username, password)
-#'         # Clear httptest cache
-#'         unlink(
-#'             system.file("vignettes/httptest/get"),
-#'             recursive = TRUE,
-#'             force = TRUE
-#'         )
-#'     }
 #' }
+#' if( is_active ){
+#' # Perform login with your credentials
+#' epLogin(username, password)
+#' 
+#' # Define custom reaction identifier 
 #' rxn_id <- "2b6bbcc5-77f4-4bed-92a9-731cdc978f6a"
 #' 
+#' # Get custom reaction object
 #' epGet("reaction", rxn_id)
-#' \dontshow{
-#'     end_vignette()
 #' }
 NULL
 

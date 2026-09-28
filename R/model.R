@@ -23,24 +23,13 @@
 #'     password <- Sys.getenv("EP_PASSWORD")
 #'     
 #'     is_active <- nzchar(username) && nzchar(password)
-#'     
-#'     library(httptest2)
-#'     start_vignette("httptest/model")
-#'     change_state()
-#'     
-#'     if( is_active ){
-#'         # Perform login
-#'         epLogin(username, password)
-#'         # Clear httptest cache
-#'         unlink(
-#'             system.file("vignettes/httptest/model"),
-#'             recursive = TRUE,
-#'             force = TRUE
-#'         )
-#'     }
 #' }
+#' if( is_active ){
 #' library(igraph)
 #' library(ggraph)
+#' 
+#' # Perform login with your credentials
+#' epLogin(username, password)
 #' 
 #' # Define smiles of interest
 #' smiles <- "ClC(Cl)=C(Cl)Cl"
@@ -82,8 +71,6 @@
 #'         limits = c(0, 1), low = "white", high = "red"
 #'     ) +
 #'     theme_graph(base_family = "")
-#' \dontshow{
-#'     end_vignette()
 #' }
 NULL
 

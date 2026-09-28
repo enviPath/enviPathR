@@ -21,28 +21,13 @@
 #'     password <- Sys.getenv("EP_PASSWORD")
 #'     
 #'     is_active <- nzchar(username) && nzchar(password)
-#'     
-#'     library(httptest2)
-#'     start_vignette("httptest/login")
-#'     
-#'     if( is_active ){
-#'         # Clear httptest cache
-#'         unlink(
-#'             system.file("vignettes/httptest/login"),
-#'             recursive = TRUE,
-#'             force = TRUE
-#'         )
-#'     }
-#'     
-#'     change_state()
 #' }
-#' # Perform login
+#' if( is_active ){
+#' # Perform login with your credentials
 #' epLogin(username, password)
 #' 
 #' # Perform logout
 #' epLogout()
-#' \dontshow{
-#'     end_vignette()
 #' }
 NULL
 
