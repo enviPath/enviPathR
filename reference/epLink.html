@@ -53,7 +53,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">epLink</span><span class="op">(</span><span class="va">from</span>, <span class="va">to</span>, init <span class="op">=</span> <span class="cn">NULL</span>, pkg <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">epLink</span><span class="op">(</span><span class="va">from</span>, <span class="va">to</span>, init <span class="op">=</span> <span class="cn">NULL</span>, pkg <span class="op">=</span> <span class="cn">NULL</span>, BPPARAM <span class="op">=</span> <span class="fu">bpparam</span><span class="op">(</span><span class="op">)</span>, rate <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -81,6 +81,19 @@ objects belonging to <code>from</code> in <code>pkg</code> are used.
 <dd><p><code>Character scalar</code>. String specifying the unique identifier
 of the package from which objects should be mapped When null, EAWAG-BBD is
 used. (Default: <code>NULL</code>)</p></dd>
+
+
+<dt id="arg-bpparam">BPPARAM<a class="anchor" aria-label="anchor" href="#arg-bpparam"></a></dt>
+<dd><p>A
+<code><a href="https://rdrr.io/pkg/BiocParallel/man/BiocParallelParam-class.html" class="external-link">BiocParallelParam</a></code>
+object specifying how the requests should be parallelised.
+(Default: <code><a href="https://rdrr.io/pkg/BiocParallel/man/register.html" class="external-link">bpparam()</a></code>)</p></dd>
+
+
+<dt id="arg-rate">rate<a class="anchor" aria-label="anchor" href="#arg-rate"></a></dt>
+<dd><p><code>Numeric scalar</code>. Integer number specifying the amount of
+requests per second to be sent to the enviPath API when <code>BPPARAM</code> is
+not serial. (Default: <code>5</code>)</p></dd>
 
 </dl></div>
     <div id="value">
