@@ -29,6 +29,7 @@ epModel predicts the biotransformation pathway for a compound expressed with
     
     is_active <- nzchar(username) && nzchar(password)
     
+    library(httptest2)
     start_vignette("httptest/model")
     change_state()
     

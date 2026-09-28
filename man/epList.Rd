@@ -27,6 +27,7 @@ epList returns a list with info on objects available in enviPath.
     
     is_active <- nzchar(username) && nzchar(password)
     
+    library(httptest2)
     start_vignette("httptest/list")
     change_state()
     

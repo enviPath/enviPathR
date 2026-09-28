@@ -24,6 +24,7 @@
 #'     
 #'     is_active <- nzchar(username) && nzchar(password)
 #'     
+#'     library(httptest2)
 #'     start_vignette("httptest/model")
 #'     change_state()
 #'     

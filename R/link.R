@@ -30,6 +30,7 @@
 #'     
 #'     is_active <- nzchar(username) && nzchar(password)
 #'     
+#'     library(httptest2)
 #'     start_vignette("httptest/link")
 #'     change_state()
 #'     
