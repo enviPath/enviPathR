@@ -19,10 +19,23 @@
 #' \dontshow{
 #'     username <- Sys.getenv("EP_USERNAME")
 #'     password <- Sys.getenv("EP_PASSWORD")
+#'     
+#'     is_active <- nzchar(username) && nzchar(password)
+#'     
+#'     start_vignette("httptest/list")
+#'     change_state()
+#'     
+#'     if( is_active ){
+#'         # Perform login
+#'         epLogin(username, password)
+#'         # Clear httptest cache
+#'         unlink(
+#'             system.file("vignettes/httptest/list"),
+#'             recursive = TRUE,
+#'             force = TRUE
+#'         )
+#'     }
 #' }
-#' # Perform login
-#' epLogin(username, password)
-#' 
 #' # List packages
 #' pkg_df <- epList("package")
 #' 
@@ -45,6 +58,9 @@
 #' 
 #' # View some pathways
 #' head(path_df)
+#' \dontshow{
+#'     end_vignette()
+#' }
 NULL
 
 #' @export
