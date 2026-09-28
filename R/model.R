@@ -81,7 +81,7 @@
 #'     scale_edge_colour_continuous(
 #'         limits = c(0, 1), low = "white", high = "red"
 #'     ) +
-#'     theme_graph()
+#'     theme_graph(base_family = "")
 #' \dontshow{
 #'     end_vignette()
 #' }
