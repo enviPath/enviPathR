@@ -31,10 +31,25 @@
 #' }
 NULL
 
+
 #' @export
 #' @rdname epLogin
 #' @importFrom httr2 request req_method req_body_form req_cookie_preserve
 epLogin <- function(username, password){
+    # Check username
+    if( length(username) != 1L || !is.character(username) || !nzchar(username)){
+        stop(
+            "'username' must be a single character string specifying the ",
+            "username linked to an enviPath user account.", call. = FALSE
+        )
+    }
+    # Check password
+    if( length(password) != 1L || !is.character(password) || !nzchar(password)){
+        stop(
+            "'password' must be a single character string specifying the ",
+            "password linked to an enviPath user account.", call. = FALSE
+        )
+    }
     # Prepare login request
     req <- request(eP_env$url) |>
         req_method("POST") |>
@@ -64,6 +79,8 @@ epLogout <- function(){
     invisible(NULL)
 }
 
+
+# Define function to perform single request
 #' @importFrom httr2 req_retry req_error req_perform
 .ep_perform <- function(req){
     # Perform request

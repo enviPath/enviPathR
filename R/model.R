@@ -74,38 +74,56 @@
 #' }
 NULL
 
+
 #' @export
 #' @rdname epModel
 #' @importFrom httr2 request req_method req_url_path_append req_body_form req_cookie_preserve resp_body_json
 epModel <- function(smiles, setting = NULL){
-    
-    if( smiles == "" ){
+    # Check smiles
+    if( !is.character(smiles) || !nzchar(smiles) ){
         stop("'smiles' must be a valid SMILES representation.", call. = FALSE)
     }
-    
+    # Check model setting
+    is_set <- .check_setting(setting)
+    # Set model setting to enviFormer if undefined
     if( is.null(setting) ) setting <- "1d915a48-286a-4394-9693-bfaa187326a5"
-    
+    # Prepend model setting with address
     setting <- paste0("https://envipath.org/setting/", setting)
-    
+    # Prepare request
     req <- request(eP_env$url) |>
         req_method("POST") |>
         req_url_path_append("util") |>
         req_body_form(smiles = smiles, settingUri = setting) |>
         req_cookie_preserve(path = eP_env$cookies)
-    
+    # Perform request
     resp <- .ep_perform(req)
-    
+    # Process response
     out <- resp_body_json(resp, simplifyVector = TRUE)
-    
+    # Process rule variables
     if( is.data.frame(out$edges$rule) ){
         out$edges$ruleId <- out$edges$rule$uuid
         out$edges$ruleName <- out$edges$rule$name
         out$edges$rule <- NULL
     }
-    
+    # Process smiles variable
     out$nodes$name <- out$nodes$smiles
     out$nodes$smiles <- NULL
-    
+    # Rename nodes variables
     out$nodes <- out$nodes[c("id", "name", "depth")]
     return(out)
+}
+
+
+# Define function to check model setting
+.check_setting <- function(setting){
+    # Check if setting exists
+    is_set <- !is.null(setting)
+    # Check setting format
+    if( is_set && (length(setting) != 1L || !is.character(setting)) ){
+        stop(
+            "'setting' must be a single character string specifying the model ",
+            "setting that should be used for the prediction.", call. = FALSE
+        )
+    }
+    return(is_set)
 }

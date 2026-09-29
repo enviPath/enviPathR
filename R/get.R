@@ -56,11 +56,19 @@ NULL
 #' @importFrom BiocParallel bpmapply bpparam
 epGet <- function(type, init = NULL, pkg = NULL, property = NULL,
     BPPARAM = bpparam(), rate = 5){
-    
+    # Check type
+    .check_type(type)
+    # Check pkg
+    is_pkg <- .check_pkg(pkg)
+    # Set pkg to EAWAG if undefined
     if( is.null(pkg) ) pkg <- "32de3cf4-e3e6-4168-956e-32fa5ddb0ce1"
-    
+    # Check init
+    is_init <- .check_init(init)
+    # Set init to full element list if undefined
     if( is.null(init) ) init <- epList(type, pkg)$id
-    
+    # Check rate
+    .check_rate(rate)
+    # Fetch every initial value in parallel
     out <- bpmapply(
         .ep_get,
         init,
@@ -68,25 +76,23 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL,
         SIMPLIFY = FALSE,
         BPPARAM = BPPARAM
     )
-    
+    # Reduce list to single object
     if( length(out) == 1L ) out <- out[[1L]]
-    
     return(out)
 } 
 
 #' @importFrom httr2 request req_url_path_append req_cookie_preserve req_throttle resp_body_json
 .ep_get <- function(init, type, pkg, property, rate){
-    
+    # Prepare get request
     req <- request(eP_env$url) |>
         req_url_path_append("package", pkg, type, init) |>
         req_cookie_preserve(path = eP_env$cookies) |>
         req_throttle(rate = rate)
-    
+    # Add property if defined
     if( !is.null(property) ) req <- req_url_path_append(req, property)
-    
+    # Perform request
     resp <- .ep_perform(req)
-    
+    # Process response
     out <- resp_body_json(resp, simplifyVector = TRUE)
-    
     return(out)
 }

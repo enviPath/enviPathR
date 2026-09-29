@@ -69,13 +69,10 @@ contributions are also welcome).
 
 ### Installation
 
-Bioconductor release version:
+CRAN release version:
 
 ```{r install-release, eval = FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("enviPathR")
+install.packages("enviPathR")
 ```
 
 Beta version:

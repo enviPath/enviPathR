@@ -12,13 +12,10 @@ under development.
 
 ## Installation
 
-Bioconductor release version:
+CRAN release version:
 
 ```
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("enviPathR")
+install.packages("enviPathR")
 ```
 
 Beta version:

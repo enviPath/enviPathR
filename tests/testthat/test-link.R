@@ -8,6 +8,12 @@ with_mock_dir("httptest/link", {
         
         expect_error(
             epLink("wrong", types[2], cpd_id),
+            "'from' must be one of the linkable elements returned by epTypes.",
+            fixed = TRUE
+        )
+        
+        expect_error(
+            epLink(types[1], types[2], "wrong"),
             "Not found. Please check that 'type' and 'pkg' are correct.",
             fixed = TRUE
         )

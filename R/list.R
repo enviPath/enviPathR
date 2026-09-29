@@ -56,9 +56,11 @@ NULL
 #' @importFrom httr2 req_url_path_append req_cookie_preserve resp_body_json
 #' @importFrom stringr str_remove
 epList <- function(type, pkg = NULL){
-    
-    is_pkg <- !is.null(pkg)
-    
+    # Check type
+    .check_type(type)
+    # Check pkg
+    is_pkg <- .check_pkg(pkg)
+    # Check type and pkg combo
     if( type == "package" && is_pkg ){
         stop("'pkg' cannot be defined when listing packages.", call. = FALSE)
     }
@@ -93,6 +95,31 @@ epList <- function(type, pkg = NULL){
     # Select relevant columns
     df <- df[ , to_keep]
     return(df)
+}
+
+
+.check_type <- function(type){
+    # Check type format
+    if( is.null(type) || length(type) != 1L || !type %in% epTypes()$listable ){
+        stop(
+            "'type' must be one of the listable elements returned by epTypes.",
+            call. = FALSE
+        )
+    }
+}
+
+
+.check_pkg <- function(pkg){
+    # Check if pkg exists
+    is_pkg <- !is.null(pkg)
+    # Check pkg format
+    if( is_pkg && (length(pkg) != 1L || !is.character(pkg)) ){
+        stop(
+            "'pkg' must be a single character string specifying a package ",
+            "unique identifier.", call. = FALSE
+        )
+    }
+    return(is_pkg)
 }
 
 
