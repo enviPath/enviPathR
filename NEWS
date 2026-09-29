@@ -1,3 +1,5 @@
 Changes in version 0.99.x
-* Introduced epTypes, epLogin, epList, epLink, epGet and epModel
-* Submitted to Bioconductor
+* Introduced epTypes, epLogin, epLogout, epList, epLink, epGet and epModel
+
+Changes in version 1.0.x
+* Submitted to CRAN

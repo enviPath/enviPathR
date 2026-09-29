@@ -2,7 +2,8 @@ Package: enviPathR
 Title: The R client for the enviPath RESTful API
 Version: 0.99.1
 Authors@R:
-    c(person(given = "Giulio", family = "Benedetti", role = c("aut", "cre"),
+    c(person(given = "Giulio", family = "Benedetti",
+          role = c("aut", "cre", "cph"),
           email = "giulio.benedetti@utu.fi",
           comment = c(ORCID = "0000-0002-8732-7692")))
 Description:

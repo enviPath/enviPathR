@@ -2,3 +2,4 @@
 ^pkgdown$
 ^_pkgdown\.yml$
 ^\.Rproj\.user$
+^cran-comments\.md$

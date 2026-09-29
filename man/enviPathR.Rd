@@ -19,11 +19,11 @@ access to enviPath by porting the database API from R.
 }
 }
 \author{
-\strong{Maintainer}: Giulio Benedetti \email{giulio.benedetti@utu.fi} (\href{https://orcid.org/0000-0002-8732-7692}{ORCID})
+\strong{Maintainer}: Giulio Benedetti \email{giulio.benedetti@utu.fi} (\href{https://orcid.org/0000-0002-8732-7692}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{
-  \item Giulio Benedetti \email{giulio.benedetti@utu.fi} (\href{https://orcid.org/0000-0002-8732-7692}{ORCID})
+  \item Giulio Benedetti \email{giulio.benedetti@utu.fi} (\href{https://orcid.org/0000-0002-8732-7692}{ORCID}) [copyright holder]
 }
 
 }
