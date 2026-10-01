@@ -1,0 +1,138 @@
+{
+    "aliases": [
+
+    ],
+    "description": "Eawag BBD compound c0001",
+    "externalReferences": {
+        "ChEBI": [
+            "27789"
+        ],
+        "PubChem Compound": [
+            "06752"
+        ]
+    },
+    "id": "https://envipath.org/package_compound/ec87b463-6a3c-4dfa-8b88-4637fc158896",
+    "halflifes": [
+
+    ],
+    "identifier": "compound",
+    "imageSize": 600,
+    "name": "1,2-Dichloroethane",
+    "pathwayScenarios": [
+
+    ],
+    "pathways": [
+        {
+            "id": "https://envipath.org/package_pathway/7b3f3e72-4f35-42c8-893d-e29c6b474232",
+            "name": "1,2-Dichloroethane",
+            "reviewStatus": "reviewed",
+            "identifier": "pathway"
+        }
+    ],
+    "pubchemCompoundReferences": [
+        "CID06752"
+    ],
+    "reactions": [
+        {
+            "id": "https://envipath.org/package_reaction/6e2372bc-b165-4c19-b01c-6b64dff4d40a",
+            "name": "Eawag BBD reaction r0001",
+            "reviewStatus": "reviewed",
+            "identifier": "reaction"
+        }
+    ],
+    "reviewStatus": "reviewed",
+    "scenarios": [
+
+    ],
+    "structures": [
+        {
+            "InChI": "InChI=1S/C2H4Cl2_h1-2H2",
+            "aliases": [
+
+            ],
+            "canonicalSmiles": "ClCCCl",
+            "charge": 0,
+            "description": "Eawag BBD compound c0001",
+            "externalReferences": {
+                "ChEBI": [
+                    "27789"
+                ],
+                "PubChem Compound": [
+                    "06752"
+                ]
+            },
+            "formula": "C2H4Cl2",
+            "halflifes": [
+
+            ],
+            "id": "https://envipath.org/package_compound_structure/7fa796ed-4816-4bc1-8c46-afdfd86ac8a3",
+            "identifier": "structure",
+            "imageSize": 600,
+            "inchikey": "WSLDOOZREJYCGB-UHFFFAOYSA-N",
+            "isDefaultStructure": true,
+            "mass": 98.96000000000001,
+            "name": "1,2-Dichloroethane",
+            "pathways": [
+                {
+                    "id": "https://envipath.org/package_pathway/7b3f3e72-4f35-42c8-893d-e29c6b474232",
+                    "name": "1,2-Dichloroethane",
+                    "reviewStatus": "reviewed",
+                    "identifier": "pathway"
+                }
+            ],
+            "pubchemCompoundReferences": [
+                "CID06752"
+            ],
+            "reactions": [
+                {
+                    "id": "https://envipath.org/package_reaction/6e2372bc-b165-4c19-b01c-6b64dff4d40a",
+                    "name": "Eawag BBD reaction r0001",
+                    "reviewStatus": "reviewed",
+                    "identifier": "reaction"
+                }
+            ],
+            "reviewStatus": "reviewed",
+            "scenarios": [
+
+            ],
+            "smiles": "C(CCl)Cl"
+        },
+        {
+            "InChI": "InChI=1S/C2H4Cl2_h1-2H2",
+            "aliases": [
+
+            ],
+            "canonicalSmiles": "ClCCCl",
+            "charge": 0,
+            "description": "Eawag BBD compound c0001 (in its normalized form)",
+            "externalReferences": {
+
+            },
+            "formula": "C2H4Cl2",
+            "halflifes": [
+
+            ],
+            "id": "https://envipath.org/package_compound_structure/69d4e95c-30b9-43a3-b385-0f9ad853a79a",
+            "identifier": "structure",
+            "imageSize": 600,
+            "inchikey": "WSLDOOZREJYCGB-UHFFFAOYSA-N",
+            "isDefaultStructure": false,
+            "mass": 98.96000000000001,
+            "name": "Normalized structure of 1,2-Dichloroethane",
+            "pathways": [
+
+            ],
+            "pubchemCompoundReferences": [
+
+            ],
+            "reactions": [
+
+            ],
+            "reviewStatus": "reviewed",
+            "scenarios": [
+
+            ],
+            "smiles": "ClCCCl"
+        }
+    ]
+}

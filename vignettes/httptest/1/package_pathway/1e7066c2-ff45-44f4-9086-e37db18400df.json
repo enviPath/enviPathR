@@ -1,0 +1,121 @@
+{
+    "aliases": [
+
+    ],
+    "completed": "true",
+    "description": "Many aromatic sulfonates are produced on a multi-ton scale and can be detected in the environment. Hundreds of thousands of kilograms of 2-aminobenzenesulfonic acid are produced for use in the U.S. annually. It is used in organic synthesis and in the manufacture of various dyes and medicines. The initial step in the degradation of 2-aminobenzenesulfonate involves the transport of the compound across the outer membrane of the cell. Alcaligenes sp. O-1 has a selective permeability barrier, allowing three aromatic sulfonates (benzene sulfonate, toluene-4-sulfonate, and 2-aminobenzenesulfonate) to pass through, as described by [http://www.ncbi.nlm.nih.gov/pubmed/8075807|Junker et al. (1994)]. Cell extracts of this species were shown to be capable of degrading at least seven substrates. Deamination of the aromatic ring in strain O-1 has been shown by [http://www.ncbi.nlm.nih.gov/pubmed/8002948|Junker et al. (1994)] to precede desulfurization. Desulfurization of the compound has been shown to precede deamination when degraded by other organisms.",
+    "id": "https://envipath.org/package_pathway/1e7066c2-ff45-44f4-9086-e37db18400df",
+    "isIncremental": false,
+    "isPredicted": false,
+    "lastModified": 1768822786,
+    "links": [
+        {
+            "ecNumbers": [
+
+            ],
+            "id": "https://envipath.org/package_pathway_edge/9244af83-bc43-47a2-b515-c676544f062d",
+            "idreaction": null,
+            "multstep": null,
+            "name": "Eawag BBD reaction r0218",
+            "pseudo": false,
+            "rule": null,
+            "scenarios": [
+                {
+                    "id": "https://envipath.org/package_scenario/60a06cd9-49d0-497d-a97c-06f44908580b",
+                    "name": "EAWAG-BBD reaction (r0218)",
+                    "reviewStatus": "reviewed",
+                    "identifier": "scenario"
+                }
+            ],
+            "source": 1,
+            "target": 2
+        },
+        {
+            "ecNumbers": [
+
+            ],
+            "id": "https://envipath.org/package_pathway_edge/163910ca-df0f-4533-afdc-6f9d405aacea",
+            "idreaction": null,
+            "multstep": null,
+            "name": "Eawag BBD reaction r0219",
+            "pseudo": false,
+            "rule": null,
+            "scenarios": [
+                {
+                    "id": "https://envipath.org/package_scenario/63379b90-9a96-4059-98d5-5c013b44c35c",
+                    "name": "EAWAG-BBD reaction (r0219)",
+                    "reviewStatus": "reviewed",
+                    "identifier": "scenario"
+                }
+            ],
+            "source": 2,
+            "target": 0
+        }
+    ],
+    "name": "2-Aminobenzenesulfonate",
+    "nodes": [
+        {
+            "atomCount": null,
+            "depth": 2.0,
+            "dt50s": [
+
+            ],
+            "engineeredIntermediate": null,
+            "id": "https://envipath.org/package_pathway_node/739d1209-f196-4038-99df-d92423c94b06",
+            "idcomp": "https://envipath.org/package_compound_structure/9c5c1f6b-8249-426e-a94f-88b678533de0",
+            "idreact": "https://envipath.org/package_compound_structure/9c5c1f6b-8249-426e-a94f-88b678533de0",
+            "image": "https://envipath.org/package_pathway_node/739d1209-f196-4038-99df-d92423c94b06?image=svg",
+            "imageSize": 400,
+            "name": "2-Hydroxymuconate",
+            "proposed": [
+
+            ],
+            "smiles": "C(=C/C(=O)[O-])/C=C(\\C(=O)[O-])/O",
+            "pseudo": false
+        },
+        {
+            "atomCount": null,
+            "depth": 0.0,
+            "dt50s": [
+
+            ],
+            "engineeredIntermediate": null,
+            "id": "https://envipath.org/package_pathway_node/9838a66c-c9c1-4155-a5cc-5c4705dd817c",
+            "idcomp": "https://envipath.org/package_compound_structure/87a9dcd9-989e-4682-8c3d-176ded170c2d",
+            "idreact": "https://envipath.org/package_compound_structure/87a9dcd9-989e-4682-8c3d-176ded170c2d",
+            "image": "https://envipath.org/package_pathway_node/9838a66c-c9c1-4155-a5cc-5c4705dd817c?image=svg",
+            "imageSize": 400,
+            "name": "2-Aminobenzenesulfonate",
+            "proposed": [
+
+            ],
+            "smiles": "C1=CC(=C(C=C1)S(=O)(=O)[O-])N",
+            "pseudo": false
+        },
+        {
+            "atomCount": null,
+            "depth": 1.0,
+            "dt50s": [
+
+            ],
+            "engineeredIntermediate": null,
+            "id": "https://envipath.org/package_pathway_node/85cfcbd7-1f89-49b9-a3a6-725a54920a01",
+            "idcomp": "https://envipath.org/package_compound_structure/8a806897-4fa6-4c32-a14f-28f81a0f8091",
+            "idreact": "https://envipath.org/package_compound_structure/8a806897-4fa6-4c32-a14f-28f81a0f8091",
+            "image": "https://envipath.org/package_pathway_node/85cfcbd7-1f89-49b9-a3a6-725a54920a01?image=svg",
+            "imageSize": 400,
+            "name": "3-Sulfocatechol",
+            "proposed": [
+
+            ],
+            "smiles": "C1=CC(=C(C(=C1)O)O)S(=O)(=O)[O-]",
+            "pseudo": false
+        }
+    ],
+    "pathwayName": "2-Aminobenzenesulfonate",
+    "reviewStatus": "reviewed",
+    "scenarios": [
+
+    ],
+    "upToDate": true
+}

@@ -1,5 +1,7 @@
+^docs$
 ^\.github$
 ^pkgdown$
 ^_pkgdown\.yml$
 ^\.Rproj\.user$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$
