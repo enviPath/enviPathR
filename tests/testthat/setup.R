@@ -19,9 +19,9 @@ if( is_active ){
 # Redact httptest output
 set_redactor(function (x) {
     # Remove address prefix
-    x <- gsub_response(x, "envipath.org/api/legacy/", "")
+    x <- httptest2::gsub_response(x, "envipath.org/api/legacy/", "")
     # Reduce unique identifiers
-    x <- gsub_response(x, "/(?:[0-9a-z]+-){2,}[0-9a-z]+/", "_")
+    x <- httptest2::gsub_response(x, "/(?:[0-9a-z]+-){2,}[0-9a-z]+/", "_")
     return(x)
 })
 # Add parent directory to httptest paths
