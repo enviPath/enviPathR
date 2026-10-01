@@ -1,0 +1,22 @@
+{
+    "node": [
+        {
+            "id": "https://envipath.org/package_pathway_node/85cfcbd7-1f89-49b9-a3a6-725a54920a01",
+            "name": "3-Sulfocatechol",
+            "reviewStatus": "reviewed",
+            "identifier": "node"
+        },
+        {
+            "id": "https://envipath.org/package_pathway_node/9838a66c-c9c1-4155-a5cc-5c4705dd817c",
+            "name": "2-Aminobenzenesulfonate",
+            "reviewStatus": "reviewed",
+            "identifier": "node"
+        },
+        {
+            "id": "https://envipath.org/package_pathway_node/739d1209-f196-4038-99df-d92423c94b06",
+            "name": "2-Hydroxymuconate",
+            "reviewStatus": "reviewed",
+            "identifier": "node"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-with_mock_dir("httptest/list", {
+with_mock_dir("../httptest/list", {
         
     test_that("list", {
         

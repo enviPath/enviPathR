@@ -1,5 +1,5 @@
 
-with_mock_dir("httptest/get", {
+with_mock_dir("../httptest/get", {
     
     test_that("get", {
         

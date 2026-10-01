@@ -1,0 +1,142 @@
+{
+    "aliases": [
+
+    ],
+    "completed": "true",
+    "description": "Uranium (U) is the most common radionuclide contaminant at US Department of Energy facilities (Riley et al., DOE/ER-0547T, 1992). More information on this element can be found at the Web Elements U page. The uranyl ion [U(VI)O2]2+ is a common, soluble form of this element in the environment. Microbes can immobilize uranyl ion in several ways, three of which are shown here. The mineral uraninite, U (IV)O2, is highly insoluble. Microbes can reduce uranyl ion to hydrated uraninite. The reduction can be carried out by a cytochrome-c3 hydrogenase from Desulfovibrio vulgaris ([http://www.ncbi.nlm.nih.gov/pubmed/8285665|Lovley et al., 1993]) and other organisms, as shown in the left-most pathway branch. Reaction A, in the middle branch, can be carried out by Deinococcus radiodurans R1 in the laboratory with concomitant oxidation of the humic acid analog anthranhydroquinone-2,6-disulfonate (AQDSH2) to its quinone form ([http://www.ncbi.nlm.nih.gov/pubmed/10788374|Fredrickson et al., 2000]). Humic acid, a brown-colored mixture of polymers, found in lignite, peat, and soils, is assumed to be the environmental cofactor. Uranyl ion can be precipitated as cell-bound hydrogen uranyl phosphate without change in oxidation state of the uranium, as shown in the right-most pathway branch. This reaction is facilitated by acid phosphatase N from Citrobacter sp. N14 ([http://www.ncbi.nlm.nih.gov/pubmed/9763695|Basnakova et al., 1998]).",
+    "id": "https://envipath.org/package_pathway/259b990e-d653-4201-9282-04f2c6b05ca0",
+    "isIncremental": false,
+    "isPredicted": false,
+    "lastModified": 1768822786,
+    "links": [
+        {
+            "ecNumbers": [
+
+            ],
+            "id": "https://envipath.org/package_pathway_edge/30122d3f-2729-490b-9def-7067cf89adf7",
+            "idreaction": null,
+            "multstep": null,
+            "name": "Eawag BBD reaction r0793",
+            "pseudo": false,
+            "rule": null,
+            "scenarios": [
+                {
+                    "id": "https://envipath.org/package_scenario/d0e9a0cc-2248-4056-943c-865bd3dd5e25",
+                    "name": "EAWAG-BBD reaction (r0793)",
+                    "reviewStatus": "reviewed",
+                    "identifier": "scenario"
+                }
+            ],
+            "source": 2,
+            "target": 1
+        },
+        {
+            "ecNumbers": [
+
+            ],
+            "id": "https://envipath.org/package_pathway_edge/e7957b99-ad83-4c17-97e6-e4fa8a3bcfbc",
+            "idreaction": null,
+            "multstep": null,
+            "name": "Eawag BBD reaction r0761, Eawag BBD reaction r0794",
+            "pseudo": false,
+            "rule": null,
+            "scenarios": [
+                {
+                    "id": "https://envipath.org/package_scenario/ff9fb2e5-82aa-4a04-bd38-39b5c212e8a0",
+                    "name": "EAWAG-BBD reaction (r0761)",
+                    "reviewStatus": "reviewed",
+                    "identifier": "scenario"
+                }
+            ],
+            "source": 2,
+            "target": 0
+        },
+        {
+            "ecNumbers": [
+
+            ],
+            "id": "https://envipath.org/package_pathway_edge/355b409c-499e-44c2-9947-69163729615c",
+            "idreaction": null,
+            "multstep": null,
+            "name": "Eawag BBD reaction r0761, Eawag BBD reaction r0794",
+            "pseudo": false,
+            "rule": null,
+            "scenarios": [
+                {
+                    "id": "https://envipath.org/package_scenario/1a4f587f-3e17-4c34-a5a0-9e81540389e4",
+                    "name": "EAWAG-BBD reaction (r0794)",
+                    "reviewStatus": "reviewed",
+                    "identifier": "scenario"
+                }
+            ],
+            "source": 2,
+            "target": 0
+        }
+    ],
+    "name": "Uranium",
+    "nodes": [
+        {
+            "atomCount": null,
+            "depth": 1.0,
+            "dt50s": [
+
+            ],
+            "engineeredIntermediate": null,
+            "id": "https://envipath.org/package_pathway_node/f06d31fa-d9fe-470d-b1b8-72237d1f96e1",
+            "idcomp": "https://envipath.org/package_compound_structure/d567fc35-a633-4695-ba56-cfe866588989",
+            "idreact": "https://envipath.org/package_compound_structure/d567fc35-a633-4695-ba56-cfe866588989",
+            "image": "https://envipath.org/package_pathway_node/f06d31fa-d9fe-470d-b1b8-72237d1f96e1?image=svg",
+            "imageSize": 400,
+            "name": "Uraninite",
+            "proposed": [
+
+            ],
+            "smiles": "O[U]O",
+            "pseudo": false
+        },
+        {
+            "atomCount": null,
+            "depth": 1.0,
+            "dt50s": [
+
+            ],
+            "engineeredIntermediate": null,
+            "id": "https://envipath.org/package_pathway_node/dd59cd8c-6e19-4dec-b119-47595607776e",
+            "idcomp": "https://envipath.org/package_compound_structure/ddf70678-dae7-4ee3-bd75-a6806d333658",
+            "idreact": "https://envipath.org/package_compound_structure/ddf70678-dae7-4ee3-bd75-a6806d333658",
+            "image": "https://envipath.org/package_pathway_node/dd59cd8c-6e19-4dec-b119-47595607776e?image=svg",
+            "imageSize": 400,
+            "name": "Hydrogen uranyl phosphate",
+            "proposed": [
+
+            ],
+            "smiles": "OP(=O)([O-])[O-].O=[U+2]=O",
+            "pseudo": false
+        },
+        {
+            "atomCount": null,
+            "depth": 0.0,
+            "dt50s": [
+
+            ],
+            "engineeredIntermediate": null,
+            "id": "https://envipath.org/package_pathway_node/b36d17e7-e73f-47f7-8136-b5f357fa7e26",
+            "idcomp": "https://envipath.org/package_compound_structure/db2b3598-11c1-4b0e-8663-9bc4ebbd5215",
+            "idreact": "https://envipath.org/package_compound_structure/db2b3598-11c1-4b0e-8663-9bc4ebbd5215",
+            "image": "https://envipath.org/package_pathway_node/b36d17e7-e73f-47f7-8136-b5f357fa7e26?image=svg",
+            "imageSize": 400,
+            "name": "Uranyl ion",
+            "proposed": [
+
+            ],
+            "smiles": "O=[U+2]=O",
+            "pseudo": false
+        }
+    ],
+    "pathwayName": "Uranium",
+    "reviewStatus": "reviewed",
+    "scenarios": [
+
+    ],
+    "upToDate": true
+}

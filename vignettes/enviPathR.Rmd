@@ -28,11 +28,14 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
+# Retrieve login credentials
 username <- Sys.getenv("EP_USERNAME")
 password <- Sys.getenv("EP_PASSWORD")
 
+# Check if login credentials exist
 is_active <- nzchar(username) && nzchar(password)
 
+# If login credentials exist
 if( is_active ){
     # Clear httptest cache
     unlink(
@@ -43,6 +46,16 @@ if( is_active ){
 }
 
 library(httptest2)
+
+# Redact httptest output
+set_redactor(function (x) {
+    # Remove address prefix
+    x <- gsub_response(x, "envipath.org/api/legacy/", "")
+    # Reduce unique identifiers
+    x <- gsub_response(x, "/(?:[0-9a-z]+-){2,}[0-9a-z]+/", "_")
+    return(x)
+})
+
 start_vignette("httptest")
 ```
 
@@ -281,10 +294,6 @@ Pathway prediction is performed with `epModel`, which uses the enviFormer model
 by default. The output list contains two data frames representing the nodes
 (compounds) and edges (reactions) of the predicted pathway, respectively.
 
-```{r, include = FALSE}
-change_state()
-```
-
 ```{r model-former}
 # Define smiles of interest
 smiles <- "ClC(Cl)=C(Cl)Cl"
@@ -302,10 +311,6 @@ kable(former_out$edges)
 Different model settings can be specified with the argument `setting`. For
 example, the PEPPER model can be used which also returns half-lime estimates for
 the predicted degradation steps.
-
-```{r, include = FALSE}
-change_state()
-```
 
 ```{r model-pepper}
 # Set id for PEPPER model setting
