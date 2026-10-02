@@ -1,4 +1,4 @@
-# enviPathR: the R client for the enviPath RESTful API <img src="man/figures/enviPathR-logo.png" align="right" width="120" />
+# enviPathR: the R Client for the enviPath RESTful API <img src="man/figures/enviPathR-logo.png" align="right" width="120" />
 
 [![issues](https://img.shields.io/github/issues/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/issues)
 [![pulls](https://img.shields.io/github/issues-pr/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/pulls)
