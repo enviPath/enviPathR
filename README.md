@@ -2,6 +2,7 @@
 
 [![issues](https://img.shields.io/github/issues/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/issues)
 [![pulls](https://img.shields.io/github/issues-pr/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/pulls)
+[![CRAN status](https://www.r-pkg.org/badges/version/enviPathR)](https://CRAN.R-project.org/package=enviPathR)
 [![R-CMD-check](https://github.com/enviPath/enviPathR/workflows/build/badge.svg)](https://github.com/enviPath/enviPathR/actions)
 [![CodeFactor](https://www.codefactor.io/repository/github/enviPath/envipathr/badge)](https://www.codefactor.io/repository/github/enviPath/envipathr)
 
