@@ -1,6 +1,66 @@
 {
     "package": [
         {
+            "description": "Package to make Prediction Models publicly available",
+            "id": "https://envipath.org/package/134886bb-b52e-4ad6-91d3-a02cecde6d95",
+            "links": [
+                {
+                    "Pathways": [
+                        "https://envipath.org/package_pathway",
+                        0
+                    ]
+                },
+                {
+                    "Rules": [
+                        "https://envipath.org/package_rule",
+                        0
+                    ]
+                },
+                {
+                    "Compounds": [
+                        "https://envipath.org/package_compound",
+                        0
+                    ]
+                },
+                {
+                    "Reactions": [
+                        "https://envipath.org/package_reaction",
+                        0
+                    ]
+                },
+                {
+                    "Relative Reasoning": [
+                        "https://envipath.org/package_relative-reasoning",
+                        5
+                    ]
+                },
+                {
+                    "Scenarios": [
+                        "https://envipath.org/package_scenario",
+                        0
+                    ]
+                }
+            ],
+            "name": "Public Prediction Models",
+            "primaryGroup": null,
+            "readers": [
+                {
+                    "id": "https://envipath.org/user/fce36893-bdb1-4a6f-87bd-5fd893feca89",
+                    "identifier": "user",
+                    "name": "admin"
+                }
+            ],
+            "reviewComment": "",
+            "reviewStatus": "reviewed",
+            "writers": [
+                {
+                    "id": "https://envipath.org/user/fce36893-bdb1-4a6f-87bd-5fd893feca89",
+                    "identifier": "user",
+                    "name": "admin"
+                }
+            ]
+        },
+        {
             "description": "This Package was generated automatically for the batch prediction task.",
             "id": "https://envipath.org/package/5b594bf6-56a8-4ce5-9a63-5fd4b525756e",
             "links": [
@@ -342,66 +402,6 @@
                 }
             ],
             "name": "EAWAG-SLUDGE",
-            "primaryGroup": null,
-            "readers": [
-                {
-                    "id": "https://envipath.org/user/fce36893-bdb1-4a6f-87bd-5fd893feca89",
-                    "identifier": "user",
-                    "name": "admin"
-                }
-            ],
-            "reviewComment": "",
-            "reviewStatus": "reviewed",
-            "writers": [
-                {
-                    "id": "https://envipath.org/user/fce36893-bdb1-4a6f-87bd-5fd893feca89",
-                    "identifier": "user",
-                    "name": "admin"
-                }
-            ]
-        },
-        {
-            "description": "Package to make Prediction Models publicly available",
-            "id": "https://envipath.org/package/134886bb-b52e-4ad6-91d3-a02cecde6d95",
-            "links": [
-                {
-                    "Pathways": [
-                        "https://envipath.org/package_pathway",
-                        0
-                    ]
-                },
-                {
-                    "Rules": [
-                        "https://envipath.org/package_rule",
-                        0
-                    ]
-                },
-                {
-                    "Compounds": [
-                        "https://envipath.org/package_compound",
-                        0
-                    ]
-                },
-                {
-                    "Reactions": [
-                        "https://envipath.org/package_reaction",
-                        0
-                    ]
-                },
-                {
-                    "Relative Reasoning": [
-                        "https://envipath.org/package_relative-reasoning",
-                        3
-                    ]
-                },
-                {
-                    "Scenarios": [
-                        "https://envipath.org/package_scenario",
-                        0
-                    ]
-                }
-            ],
-            "name": "Public Prediction Models",
             "primaryGroup": null,
             "readers": [
                 {
