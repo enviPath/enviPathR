@@ -1,5 +1,7 @@
 
 library(httptest2)
+# Set serial strategy
+BPPARAM <- BiocParallel::SerialParam()
 # Retrieve login credentials
 username <- Sys.getenv("EP_USERNAME")
 password <- Sys.getenv("EP_PASSWORD")
