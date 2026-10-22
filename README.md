@@ -11,6 +11,10 @@ pathway prediction system. It accesses enviPath resources through its [legacy
 API](https://envipath.org/api/legacy/docs#/). A new, faster API is currently
 under development.
 
+> **Note**: MacOS users with older R releases may run into BiocParallel errors
+> when using `epLink` and `epGet`. If that happens, set the argument
+> `BPPARAM = BiocParallel::SerialParam()` to turn off parell queries.
+
 ## Installation
 
 CRAN release version:
