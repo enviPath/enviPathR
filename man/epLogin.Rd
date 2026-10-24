@@ -17,11 +17,11 @@ used to log into an enviPath personal account.}
 used to log into an enviPath personal account.}
 }
 \value{
-A message upon successful login.
+A message upon successful login or logout.
 }
 \description{
-epLogin lets you perform login to enviPath. An account is required to use the
-enviPath API.
+epLogin and epLogout let you log in and out of enviPath, respectively. An
+account is required to use the enviPath API.
 }
 \examples{
 \dontshow{

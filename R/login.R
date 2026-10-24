@@ -3,8 +3,8 @@
 #' @name epLogin
 #' 
 #' @description
-#' epLogin lets you perform login to enviPath. An account is required to use the
-#' enviPath API.
+#' epLogin and epLogout let you log in and out of enviPath, respectively. An
+#' account is required to use the enviPath API.
 #' 
 #' @param username \code{Character scalar}. String specifying the username
 #' used to log into an enviPath personal account.
@@ -13,7 +13,7 @@
 #' used to log into an enviPath personal account.
 #' 
 #' @returns
-#' A message upon successful login.
+#' A message upon successful login or logout.
 #' 
 #' @examples
 #' \dontshow{

@@ -110,6 +110,10 @@ epLink <- function(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate 
     if( by == "pathway2compound" ){
         linkmap[to] <- str_remove(linkmap[[to]], "/structure/.*")
     }
+    if( by == "pathway2reaction" ){
+        rxn_df <- epList("reaction", pkg = pkg)
+        linkmap[to] <- rxn_df$id[rxn_df$name %in% linkmap[[to]]]
+    }
     # Remove id prefix
     linkmap[to] <- str_remove(linkmap[[to]], ".*/")
     return(linkmap)
@@ -142,7 +146,7 @@ epLink <- function(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate 
     # Check if pkg exists
     is_init <- !is.null(init)
     # Check pkg format
-    if( is_init && !all(is.character(init) & nzchar(init)) ){
+    if( is_init && (!is.character(init) || !all(nzchar(init))) ){
         stop(
             "'init' must be a character vector specifying the unique ",
             "identifiers of type 'from' that should be mapped on 'to'.",
