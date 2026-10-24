@@ -32,7 +32,7 @@ jobs:
       EP_USERNAME: ${{ secrets.EP_USERNAME }}
       EP_PASSWORD: ${{ secrets.EP_PASSWORD }}
     steps:
-    - uses: envipath/envipathr@devel
+    - uses: neurogenomics/rworkflows@master
       with:
         run_bioccheck: ${{ false }}
         run_rcmdcheck: ${{ false }}
