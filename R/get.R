@@ -30,7 +30,7 @@
 #'   not serial. (Default: \code{5})
 #' 
 #' @returns
-#' A list of objects
+#' A list of objects.
 #' 
 #' @examples
 #' \dontshow{
@@ -76,8 +76,6 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL,
         SIMPLIFY = FALSE,
         BPPARAM = BPPARAM
     )
-    # Reduce list to single object
-    if( length(out) == 1L ) out <- out[[1L]]
     return(out)
 } 
 

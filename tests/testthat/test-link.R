@@ -18,6 +18,12 @@ with_mock_dir("../httptest/link", {
             fixed = TRUE
         )
         
+        expect_error(
+            epLink(types[1], types[2], factor(cpd_id), BPPARAM = BPPARAM),
+            "'init' must be a character vector specifying the unique identifiers of type 'from' that should be mapped on 'to'.",
+            fixed = TRUE
+        )
+        
         cpd2inchikey <- epLink(types[1], types[2], cpd_id, BPPARAM = BPPARAM)
         
         expect_named(cpd2inchikey, types)

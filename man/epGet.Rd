@@ -39,7 +39,7 @@ requests per second to be sent to the enviPath API when \code{BPPARAM} is
 not serial. (Default: \code{5})}
 }
 \value{
-A list of objects
+A list of objects.
 }
 \description{
 epGet returns raw objects from enviPath.

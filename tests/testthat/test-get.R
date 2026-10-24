@@ -20,6 +20,6 @@ with_mock_dir("../httptest/get", {
         rxn <- epGet("reaction", rxn_id, BPPARAM = BPPARAM)
         
         expect_type(rxn, "list")
-        expect_length(rxn, 15L)
+        expect_length(rxn[[1L]], 15L)
     })
 })
