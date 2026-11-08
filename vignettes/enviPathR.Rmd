@@ -1,5 +1,5 @@
 ---
-title: "enviPathR"
+title: "enviPathR: the R Client for the enviPath RESTful API"
 author:
   - name: Giulio Benedetti
     affiliation: University of Turku
@@ -17,7 +17,7 @@ output:
 date: "`r doc_date()`"
 package: "`r pkg_ver('enviPathR')`"
 vignette: >
-  %\VignetteIndexEntry{enviPathR: access enviPath and predict pathways from R}
+  %\VignetteIndexEntry{enviPathR: the R Client for the enviPath RESTful API}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
