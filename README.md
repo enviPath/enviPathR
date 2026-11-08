@@ -4,6 +4,7 @@
 [![pulls](https://img.shields.io/github/issues-pr/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/pulls)
 [![CRAN status](https://www.r-pkg.org/badges/version/enviPathR)](https://CRAN.R-project.org/package=enviPathR)
 [![R-CMD-check](https://github.com/enviPath/enviPathR/workflows/build/badge.svg)](https://github.com/enviPath/enviPathR/actions)
+[![](https://cranlogs.r-pkg.org/badges/enviPathR)](https://cran.r-project.org/package=enviPathR)
 [![CodeFactor](https://www.codefactor.io/repository/github/enviPath/envipathr/badge)](https://www.codefactor.io/repository/github/enviPath/envipathr)
 
 This package provides a client to the enviPath biotransformation database and
@@ -32,9 +33,8 @@ remotes::install_github("enviPath/enviPathR")
 ## Terms of use
 
 While enviPathR itself is openly available under an Artistic 2.0 license, the
-enviPath database and pathway prediction system is freely accessible only for
-academic use. More information on scope of use and commercial licensing can be
-found in the [enviPath terms of use](https://envipath.org/terms).
+enviPath database and pathway prediction system are provided with their own
+[terms of use](https://envipath.org/terms) that users should be familiar with.
 
 ## References
 
