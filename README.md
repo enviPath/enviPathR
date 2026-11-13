@@ -4,8 +4,8 @@
 [![pulls](https://img.shields.io/github/issues-pr/enviPath/enviPathR)](https://github.com/enviPath/enviPathR/pulls)
 [![CRAN status](https://www.r-pkg.org/badges/version/enviPathR)](https://CRAN.R-project.org/package=enviPathR)
 [![R-CMD-check](https://github.com/enviPath/enviPathR/workflows/build/badge.svg)](https://github.com/enviPath/enviPathR/actions)
-[![](https://cranlogs.r-pkg.org/badges/enviPathR)](https://cran.r-project.org/package=enviPathR)
 [![CodeFactor](https://www.codefactor.io/repository/github/enviPath/envipathr/badge)](https://www.codefactor.io/repository/github/enviPath/envipathr)
+[![downloads](https://cranlogs.r-pkg.org/badges/enviPathR)](https://cran.r-project.org/package=enviPathR)
 
 This package provides a client to the enviPath biotransformation database and
 pathway prediction system. It accesses enviPath resources through its [legacy

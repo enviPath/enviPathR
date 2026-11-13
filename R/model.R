@@ -17,6 +17,10 @@
 #' A list with two data frames with information on nodes and edges,
 #' respectively.
 #' 
+#' @details
+#' For transparency, the performed raw API call can be accessed with
+#' \code{attr(x, "call")}, where \code{x} is the output of \code{epModel}.
+#' 
 #' @examples
 #' \dontshow{
 #'     username <- Sys.getenv("EP_USERNAME")
@@ -77,7 +81,8 @@ NULL
 
 #' @export
 #' @rdname epModel
-#' @importFrom httr2 request req_method req_url_path_append req_body_form req_cookie_preserve resp_body_json
+#' @importFrom httr2 request req_method req_url_path_append req_body_form
+#'   req_cookie_preserve req_get_body resp_url resp_body_json
 epModel <- function(smiles, setting = NULL){
     # Check smiles
     if( !is.character(smiles) || !nzchar(smiles) ){
@@ -99,6 +104,9 @@ epModel <- function(smiles, setting = NULL){
     resp <- .ep_perform(req)
     # Process response
     out <- resp_body_json(resp, simplifyVector = TRUE)
+    # Store raw API call in corresponding attribute
+    attr(out, "call")$url <- resp_url(resp)
+    attr(out, "call")$body <- req_get_body(req)
     # Process rule variables
     if( is.data.frame(out$edges$rule) ){
         out$edges$ruleId <- out$edges$rule$uuid

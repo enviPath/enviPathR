@@ -7,21 +7,28 @@ export(epLogin)
 export(epLogout)
 export(epModel)
 export(epTypes)
-importFrom(BiocParallel,bplapply)
-importFrom(BiocParallel,bpmapply)
-importFrom(BiocParallel,bpparam)
-importFrom(httr2,req_body_form)
-importFrom(httr2,req_cookie_preserve)
-importFrom(httr2,req_error)
-importFrom(httr2,req_method)
-importFrom(httr2,req_perform)
-importFrom(httr2,req_retry)
-importFrom(httr2,req_throttle)
-importFrom(httr2,req_url_path_append)
-importFrom(httr2,request)
-importFrom(httr2,resp_body_json)
+importFrom(BiocParallel,
+  bplapply,
+  bpmapply,
+  bpparam
+)
+importFrom(httr2,
+  req_body_form,
+  req_cookie_preserve,
+  req_error,
+  req_get_body,
+  req_method,
+  req_perform,
+  req_retry,
+  req_throttle,
+  req_url_path_append,
+  request,
+  resp_body_json,
+  resp_url
+)
 importFrom(stats,complete.cases)
-importFrom(stringr,fixed)
-importFrom(stringr,str_remove)
-importFrom(stringr,str_split)
+importFrom(stringi,
+  stri_replace_first_regex,
+  stri_split_fixed
+)
 importFrom(tools,R_user_dir)

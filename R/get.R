@@ -30,7 +30,11 @@
 #'   not serial. (Default: \code{5})
 #' 
 #' @returns
-#' A list of objects.
+#' A list of retrieved objects.
+#' 
+#' @details
+#' For transparency, the performed raw API calls can be accessed with
+#' \code{attr(x, "call")}, where \code{x} is the output of \code{epGet}.
 #' 
 #' @examples
 #' \dontshow{
@@ -76,10 +80,15 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL,
         SIMPLIFY = FALSE,
         BPPARAM = BPPARAM
     )
+    # Store raw API calls in corresponding attribute
+    attr(out, "call")$url <- vapply(
+        out, attr, character(1L), "call", USE.NAMES = FALSE
+    )
     return(out)
 } 
 
-#' @importFrom httr2 request req_url_path_append req_cookie_preserve req_throttle resp_body_json
+#' @importFrom httr2 request req_url_path_append req_cookie_preserve
+#'   req_throttle resp_url resp_body_json
 .ep_get <- function(init, type, pkg, property, rate){
     # Prepare get request
     req <- request(eP_env$url) |>
@@ -92,5 +101,7 @@ epGet <- function(type, init = NULL, pkg = NULL, property = NULL,
     resp <- .ep_perform(req)
     # Process response
     out <- resp_body_json(resp, simplifyVector = TRUE)
+    # Store raw API call in corresponding attribute
+    attr(out, "call") <- resp_url(resp)
     return(out)
 }

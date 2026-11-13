@@ -22,6 +22,10 @@ respectively.
 epModel predicts the biotransformation pathway for a compound expressed with
 \code{smiles} using the selected model \code{setting}.
 }
+\details{
+For transparency, the performed raw API call can be accessed with
+\code{attr(x, "call")}, where \code{x} is the output of \code{epModel}.
+}
 \examples{
 \dontshow{
     username <- Sys.getenv("EP_USERNAME")

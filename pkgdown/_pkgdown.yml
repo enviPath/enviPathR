@@ -1,4 +1,12 @@
+url: https://envipath.github.io/enviPathR
 destination: docs
+
+template:
+  bootstrap: 5
+  light-switch: true
+  bslib:
+    navbar-bg: "#142D4A"
+
 reference:
 - title: Work with enviPath API
 - contents:

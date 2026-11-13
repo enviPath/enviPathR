@@ -37,6 +37,10 @@ A data frame with links between from and to.
 \description{
 epLink returns mappings between enviPath object types.
 }
+\details{
+For transparency, the performed raw API calls can be accessed with
+\code{attr(x, "call")}, where \code{x} is the output of \code{epLink}.
+}
 \examples{
 \dontshow{
     username <- Sys.getenv("EP_USERNAME")
