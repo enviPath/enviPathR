@@ -1,16 +1,16 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/articles/enviPathR.html</loc></url>
-<url><loc>/articles/index.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/reference/enviPathR.html</loc></url>
-<url><loc>/reference/epGet.html</loc></url>
-<url><loc>/reference/epLink.html</loc></url>
-<url><loc>/reference/epList.html</loc></url>
-<url><loc>/reference/epLogin.html</loc></url>
-<url><loc>/reference/epModel.html</loc></url>
-<url><loc>/reference/epTypes.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/404.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/articles/enviPathR.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/articles/index.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/authors.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/index.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/enviPathR.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/epGet.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/epLink.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/epList.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/epLogin.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/epModel.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/epTypes.html</loc></url>
+<url><loc>https://envipath.github.io/enviPathR/reference/index.html</loc></url>
 </urlset>
 

@@ -3,4 +3,7 @@ pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   enviPathR: enviPathR.html
-last_built: 2026-11-08T01:43Z
+last_built: 2026-11-13T03:04Z
+urls:
+  reference: https://envipath.github.io/enviPathR/reference
+  article: https://envipath.github.io/enviPathR/articles
