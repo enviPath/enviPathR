@@ -32,6 +32,10 @@
 #' @returns
 #' A data frame with links between from and to.
 #' 
+#' @details
+#' For transparency, the performed raw API calls can be accessed with
+#' \code{attr(x, "call")}, where \code{x} is the output of \code{epLink}.
+#' 
 #' @examples
 #' \dontshow{
 #'     username <- Sys.getenv("EP_USERNAME")
@@ -54,7 +58,7 @@ NULL
 #' @export
 #' @rdname epLink
 #' @importFrom BiocParallel bplapply bpparam
-#' @importFrom stringr str_remove
+#' @importFrom stringi stri_replace_first_regex
 #' @importFrom stats complete.cases
 epLink <- function(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate = 5){
     # Check from
@@ -97,6 +101,8 @@ epLink <- function(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate 
         x = rep(init, lengths(out, use.names = FALSE)),
         y = unlist(out, use.names = FALSE)
     )
+    # Store raw API calls in corresponding attribute
+    attr(linkmap, "call")$url <- vapply(out, attr, character(1L), "call")
     # Set linkmap column names
     colnames(linkmap) <- c(from, to)
     # Remove missing values
@@ -108,19 +114,21 @@ epLink <- function(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate 
     }
     # Remove structure identifier for compounds
     if( by == "pathway2compound" ){
-        linkmap[to] <- str_remove(linkmap[[to]], "/structure/.*")
+        linkmap[to] <- linkmap[[to]] |>
+            stri_replace_first_regex("/structure/.*", "")
     }
     if( by == "pathway2reaction" ){
         rxn_df <- epList("reaction", pkg = pkg)
         linkmap[to] <- rxn_df$id[rxn_df$name %in% linkmap[[to]]]
     }
     # Remove id prefix
-    linkmap[to] <- str_remove(linkmap[[to]], ".*/")
+    linkmap[to] <- stri_replace_first_regex(linkmap[[to]], ".*/", "")
     return(linkmap)
 }
 
 
-#' @importFrom httr2 request req_url_path_append req_cookie_preserve req_throttle resp_body_json
+#' @importFrom httr2 request req_url_path_append req_cookie_preserve
+#'   req_throttle resp_url resp_body_json
 .ep_link <- function(init, from, to, pkg, rate){
     # Prepare link request
     req <- request(eP_env$url) |>
@@ -137,6 +145,8 @@ epLink <- function(from, to, init = NULL, pkg = NULL, BPPARAM = bpparam(), rate 
         unlist(use.names = FALSE)
     # Simplify list to single object
     if( is.null(out) ) out <- NA
+    # Store raw API call in corresponding attribute
+    attr(out, "call") <- resp_url(resp)
     return(out)
 }
 

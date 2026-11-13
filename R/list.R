@@ -15,6 +15,10 @@
 #' @returns
 #' A data frame with all objects belonging to \code{type} in \code{pkg}.
 #' 
+#' @details
+#' For transparency, the performed raw API call can be accessed with
+#' \code{attr(x, "call")}, where \code{x} is the output of \code{epList}.
+#' 
 #' @examples
 #' \dontshow{
 #'     username <- Sys.getenv("EP_USERNAME")
@@ -53,8 +57,8 @@ NULL
 
 #' @export
 #' @rdname epList
-#' @importFrom httr2 req_url_path_append req_cookie_preserve resp_body_json
-#' @importFrom stringr str_remove
+#' @importFrom httr2 req_url_path_append req_cookie_preserve resp_url resp_body_json
+#' @importFrom stringi stri_replace_first_regex
 epList <- function(type, pkg = NULL){
     # Check type
     .check_type(type)
@@ -64,36 +68,40 @@ epList <- function(type, pkg = NULL){
     if( type == "package" && is_pkg ){
         stop("'pkg' cannot be defined when listing packages.", call. = FALSE)
     }
-    
+    # Initialise request and preserve cookies
     req <- request(eP_env$url) |>
         req_cookie_preserve(eP_env$cookies)
-    
+    # Append package id to call url
     if( is_pkg ) req <- req_url_path_append(req, "package", pkg)
-        
+    # Append object type to call url
     req <- req_url_path_append(req, type)
-    
+    # Perform query
     resp <- .ep_perform(req)
-    
+    # Retrieve result from response
     out <- resp_body_json(resp, simplifyVector = TRUE)
     # Extract data.frame
     df <- out[[1L]]
     # Remove id prefix
-    df$id <- str_remove(df$id, ".*/")
-    
+    df$id <- stri_replace_first_regex(df$id, ".*/", "")
+    # Select relevant variables to keep
     to_keep <- c("name", "id")
     # Include review status except for type setting
     if( type != "setting" ) to_keep <- c(to_keep, "reviewStatus")
-    
+    # Add package-specific stats
     if( type == "package" ){
-      
+        # Retrieve object types
         obj.types <- names(df$links[[1L]])
+        # Count objects for each type
         obj.counts <- vapply(obj.types, .extract_obj_counts, numeric(nrow(df)), df)
-      
+        # Combine object counts into table
         df <- cbind(df, obj.counts)
+        # Add description and object counts to relevant variables
         to_keep <- c(to_keep, "description", obj.types)
     }
     # Select relevant columns
     df <- df[ , to_keep]
+    # Store raw API call in corresponding attribute
+    attr(df, "call")$url <- resp_url(resp)
     return(df)
 }
 

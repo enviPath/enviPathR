@@ -20,6 +20,10 @@ A data frame with all objects belonging to \code{type} in \code{pkg}.
 \description{
 epList returns a list with info on objects available in enviPath.
 }
+\details{
+For transparency, the performed raw API call can be accessed with
+\code{attr(x, "call")}, where \code{x} is the output of \code{epList}.
+}
 \examples{
 \dontshow{
     username <- Sys.getenv("EP_USERNAME")

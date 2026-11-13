@@ -25,12 +25,12 @@ NULL
 
 #' @export
 #' @rdname epTypes
-#' @importFrom stringr str_split fixed
+#' @importFrom stringi stri_split_fixed
 epTypes <- function(){
     # Retrieve links between object types
     links <- eP_env$links |>
         names() |>
-        str_split(fixed("2"), simplify = TRUE) |>
+        stri_split_fixed("2", simplify = TRUE) |>
         as.data.frame()
     # Give names to link columns
     colnames(links) <- c("from", "to")

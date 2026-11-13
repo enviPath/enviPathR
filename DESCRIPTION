@@ -1,6 +1,6 @@
 Package: enviPathR
 Title: Client for the 'enviPath' 'RESTful' API
-Version: 1.0.2
+Version: 1.0.3
 Authors@R:
     c(person(given = "Giulio", family = "Benedetti",
           role = c("aut", "cre", "cph"),
@@ -23,7 +23,7 @@ Imports:
     BiocParallel,
     httr2,
     stats,
-    stringr,
+    stringi,
     tools
 Suggests:
     BiocStyle,
@@ -36,8 +36,8 @@ Suggests:
 License: Artistic-2.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 8.0.0
-URL: https://envipath.github.io/enviPathR/
+URL: https://github.com/enviPath/enviPathR, https://envipath.github.io/enviPathR
 BugReports: https://github.com/enviPath/enviPathR/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.1
